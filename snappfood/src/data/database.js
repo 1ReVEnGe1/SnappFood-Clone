@@ -11,66 +11,66 @@ import sandwiches from '../assets/website_image_sandwich_1.jpg'
 import seafoods from '../assets/website_image_seafood_1.jpg'
 import nuggets from '../assets/website_image_sokhari_1.jpg'
 
-export const CATEGORIESs = [, "فست فود", "کباب", "پیتزا", "برگر", "ساندویچ", "سوخاری", "پاستا", "سالاد", "دریایی", "بین الملل", "گیلانی"];
+
 export const CATEGORIES =[
     {
         id:1,
-        categoryName: "ایرانی",
+        title: "ایرانی",
         image:iraniFoods
     },
     {
         id:2,
-        categoryName: "فست فود",
+        title: "فست فود",
         image:fastfoods
     },
     {
         id:3,
-        categoryName: "کباب",
+        title: "کباب",
         image:kebabs
     },
     {
         id:4,
-        categoryName: "پیتزا",
+        title: "پیتزا",
         image:pizzas
     },
     {
         id:5,
-        categoryName: "برگر",
+        title: "برگر",
         image:burgers
     },
     {
         id:6,
-        categoryName: "ساندویچ",
+        title: "ساندویچ",
         image:sandwiches
     },
     {
         id:7,
-        categoryName: "سوخاری",
+        title: "سوخاری",
         image:nuggets
     },
     {
         id:8,
-        categoryName: "پاستا",
+        title: "پاستا",
         image:italyFoods
     },
     {
         id:9,
-        categoryName: "سالاد",
+        title: "سالاد",
         image:salads
     },
     {
         id:10,
-        categoryName: "دریایی",
+        title: "دریایی",
         image:seafoods
     },
     {
         id:11,
-        categoryName: "بین الملل",
+        title: "بین الملل",
         image:asianFoods
     },
     {
         id:12,
-        categoryName: "گیلانی",
+        title: "گیلانی",
         image:guilaniFoods
     },
 ]

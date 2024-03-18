@@ -1,0 +1,61 @@
+
+.mainCatCon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightcoral;
+}
+.mainCon{
+    /* width: 100%; */
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background-color: lightblue;
+}
+.categoryCard{
+    border-radius: 0.75rem;
+    -webkit-border-radius: 0.75rem;
+    -moz-border-radius: 0.75rem;
+    -ms-border-radius: 0.75rem;
+    -o-border-radius: 0.75rem;
+    width: 150px;
+    height: 85px;
+    position: relative;
+    border: 1px solid white;
+    box-shadow: 0 0 10px #00000046;
+    overflow: hidden;
+}
+.categoryCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+.categoryCard div{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    width: 60px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+    -ms-border-radius: 5px 0 0 0;
+    -o-border-radius: 5px 0 0 0;
+    padding: 5px;
+}
+.categoryCard div p {
+    font-size: 1rem;
+}
