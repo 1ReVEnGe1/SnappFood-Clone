@@ -10,7 +10,7 @@ import salads from '../assets/website_image_salad_1.jpg'
 import sandwiches from '../assets/website_image_sandwich_1.jpg'
 import seafoods from '../assets/website_image_seafood_1.jpg'
 import nuggets from '../assets/website_image_sokhari_1.jpg'
-//----------------------------------
+//-----------header-----------------------
 import restaurantImg from '../assets/headerCategory/desktop_1_603508bf202d8_img_st_food.png'
 import supermarketImg from '../assets/headerCategory/desktop_4_603508a14ab73_img_st_supermarket.png'
 import cafeImg from '../assets/headerCategory/desktop_2_603508b330711_img_st_cafe.png'
@@ -21,6 +21,11 @@ import meatImg from '../assets/headerCategory/desktop_11_603507afc9a32_img_st_me
 import nutImg from '../assets/headerCategory/desktop_7_60350883d6e43_img_st_nut.png'
 import icecreamImg from '../assets/headerCategory/desktop_8_6035087b463a3_img_st_icecream.png'
 import otherImg from '../assets/headerCategory/desktop_9_603b811b1d540_img_st_other2.png'
+//-----------restaurants------------------
+import badkonakFast from '../assets/restaurants/badkonak.jpg'
+import kababSaturiBonabRes from '../assets/restaurants/kabab saturi bonab azarbayjan.jpg'
+import shilaPizzaFast from '../assets/restaurants/pizza shila.jpg'
+import shayestehRes from '../assets/restaurants/shayesteh restaurant.jpg'
 
 
 export const IRANIP = 'ایرانی'
@@ -152,12 +157,12 @@ export const HEADERCATEGORY = [
     {
         id:6,
         title:"میوه",
-        image:restaurantImg
+        image:fruitImg
     },
     {
         id:7,
         title:"پروتئین",
-        image:fruitImg
+        image:meatImg
     },
     {
         id:8,
@@ -186,7 +191,8 @@ export const RESTAURANTS = [
         totalVote:8955,
         category:IRANI,
         orders:'ایرانی، چلوکباب، کباب',
-        discount:'15%'
+        discount:'15%',
+        image: shayestehRes
     },
     {
         id:2,
@@ -197,7 +203,8 @@ export const RESTAURANTS = [
         totalVote:296,
         category:IRANI,
         orders:'ایرانی، کباب',
-        discount:''
+        discount:'',
+        image: kababSaturiBonabRes
     },
     {
         id:3,
@@ -242,6 +249,30 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، چلوکباب، پیتزا ایتالیایی',
         discount:'5%'
+    },
+    {
+        id:7,
+        title:'فست فود بادکنک',
+        courierPrice :'رایگان',
+        courier : 'پیک فروشنده',
+        score:4.2,
+        totalVote:9258,
+        category:FASTFOOD,
+        orders:'فست فود، پیتزا آمریکایی، پیتزا',
+        discount:'',
+        image:badkonakFast
+    },
+    {
+        id:8,
+        title:'پیتزا شیلا',
+        courierPrice :'12000',
+        courier : 'پیک ارسال اکسپرس',
+        score:4.8,
+        totalVote:13801,
+        category:FASTFOOD,
+        orders:'فست فود، ساندویچ، پیتزا',
+        discount:'5%',
+        image:shilaPizzaFast
     },
     
 ]
