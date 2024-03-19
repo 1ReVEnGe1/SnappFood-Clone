@@ -1,23 +1,20 @@
 import { CATEGORIES } from "@/data/database";
-import Image from "next/image";
 import './mainPage.css'
-import Link from "next/link";
+import MainCategoryItems from "@/components/MainCategoryItems";
+
 
 export default function Home() {
 
   return (
     <main className={'mainCatCon'} >
-      <p>دسته بندی ها</p>
+      <div style={{marginTop:'100px',display:'flex',justifyContent:'flex-start',width:'100%'}}>
+        <p>دسته بندی ها</p>
+      </div>
       <div className={'mainCon'} >
         {
           CATEGORIES.map( category => (
-            <Link href={`/`} className={'categoryCard'} >
-              <Image src={category.image} alt={category.title} />
-              <div >
-                <p>{category.title}</p>
-              </div>
-            </Link>
-          ) )
+            <MainCategoryItems key={category.id} category={category} />
+          ))
         }
       </div>
     </main>

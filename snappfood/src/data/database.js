@@ -23,70 +23,106 @@ import icecreamImg from '../assets/headerCategory/desktop_8_6035087b463a3_img_st
 import otherImg from '../assets/headerCategory/desktop_9_603b811b1d540_img_st_other2.png'
 
 
+export const IRANIP = 'ایرانی'
+export const IRANI = 'irani'
+export const FASTFOODP = 'فست فود'
+export const FASTFOOD = 'fastfood'
+export const KEBABP = 'کباب'
+export const KEBAB = 'kebab'
+export const PIZZAP = 'پیتزا'
+export const PIZZA = 'pizza'
+export const BURGURP = 'برگر'
+export const BURGUR = 'burgur'
+export const SANDWICHP = 'ساندویچ'
+export const SANDWICH = 'sandwich'
+export const SUKHARIP = 'سوخاری'
+export const SUKHARI = 'sukhari'
+export const PASTAP = 'پاستا'
+export const PASTA = 'pasta'
+export const SALADP = 'سالاد'
+export const SALAD = 'salad'
+export const SEAFOODP = 'دریایی'
+export const SEAFOOD = 'seafood'
+export const INTERNATIONALP = 'بین الملل'
+export const INTERNATIONAL = 'asian'
+export const GILANIP = 'گیلانی'
+export const GILANI = 'gilani'
 
 export const CATEGORIES =[
     {
         id:1,
-        title: "ایرانی",
+        titleP: IRANIP,
+        title: IRANI,
         image:iraniFoods
     },
     {
         id:2,
-        title: "فست فود",
+        titleP: FASTFOODP,
+        title: FASTFOOD,
         image:fastfoods
     },
     {
         id:3,
-        title: "کباب",
+        titleP: KEBABP,
+        title: KEBAB,
         image:kebabs
     },
     {
         id:4,
-        title: "پیتزا",
+        titleP: PIZZAP,
+        title: PIZZA,
         image:pizzas
     },
     {
         id:5,
-        title: "برگر",
+        titleP: BURGURP,
+        title: BURGUR,
         image:burgers
     },
     {
         id:6,
-        title: "ساندویچ",
+        titleP: SANDWICHP,
+        title: SANDWICH,
         image:sandwiches
     },
     {
         id:7,
-        title: "سوخاری",
+        titleP: SUKHARIP,
+        title: SUKHARI,
         image:nuggets
     },
     {
         id:8,
-        title: "پاستا",
+        titleP: PASTAP,
+        title: PASTA,
         image:italyFoods
     },
     {
         id:9,
-        title: "سالاد",
+        titleP: SALADP,
+        title: SALAD,
         image:salads
     },
     {
         id:10,
-        title: "دریایی",
+        titleP: SEAFOODP,
+        title: SEAFOOD,
         image:seafoods
     },
     {
         id:11,
-        title: "بین الملل",
+        titleP: INTERNATIONALP,
+        title: INTERNATIONAL,
         image:asianFoods
     },
     {
         id:12,
-        title: "گیلانی",
+        titleP: GILANIP,
+        title: GILANI,
         image:guilaniFoods
     },
 ]
-
+ 
 export const HEADERCATEGORY = [
     {
         id:1,
@@ -138,4 +174,74 @@ export const HEADERCATEGORY = [
         title:"سایر",
         image:otherImg
     },
+]
+
+export const RESTAURANTS = [
+    {
+        id:1,
+        title:'رستوران شایسته',
+        courier : 'پیک فروشنده',
+        courierPrice :12000,
+        score:4.4,
+        totalVote:8955,
+        category:IRANI,
+        orders:'ایرانی، چلوکباب، کباب',
+        discount:'15%'
+    },
+    {
+        id:2,
+        title:'کباب ساطوری بناب آذربایجان',
+        courier : 'ارسال اکسپرس',
+        courierPrice :11000,
+        score:3.8,
+        totalVote:296,
+        category:IRANI,
+        orders:'ایرانی، کباب',
+        discount:''
+    },
+    {
+        id:3,
+        title:'تهیه غذای الو غذای من',
+        courier : 'ارسال اکسپرس',
+        courierPrice :14700,
+        score:4.4,
+        totalVote:375,
+        category:IRANI,
+        orders:'ایرانی، سنتی',
+        discount:''
+    },
+    {
+        id:4,
+        title:'رستوران کباب بناب',
+        courier : 'پیک فروشنده',
+        courierPrice :'رایگان',
+        score:4.4,
+        totalVote:6507,
+        category:IRANI,
+        orders:'ایرانی، کباب، پیش غذا',
+        discount:''
+    },
+    {
+        id:5,
+        title:'غذای ادیب',
+        courierPrice :'رایگان',
+        courier : 'پیک فروشنده',
+        score:3.8,
+        totalVote:1604,
+        category:IRANI,
+        orders:'ایرانی، چلوکباب، چلوپلو ایرانی',
+        discount:'5%'
+    },
+    {
+        id:6,
+        title:'رستوران ارغوان',
+        courierPrice :'رایگان',
+        courier : 'پیک فروشنده',
+        score:3.9,
+        totalVote:522,
+        category:IRANI,
+        orders:'ایرانی، چلوکباب، پیتزا ایتالیایی',
+        discount:'5%'
+    },
+    
 ]
