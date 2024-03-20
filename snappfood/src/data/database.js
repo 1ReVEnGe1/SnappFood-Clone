@@ -26,6 +26,15 @@ import badkonakFast from '../assets/restaurants/badkonak.jpg'
 import kababSaturiBonabRes from '../assets/restaurants/kabab saturi bonab azarbayjan.jpg'
 import shilaPizzaFast from '../assets/restaurants/pizza shila.jpg'
 import shayestehRes from '../assets/restaurants/shayesteh restaurant.jpg'
+import aloghazayeman from '../assets/restaurants/alo ghazaye man.jpg'
+import resturankababbonab from '../assets/restaurants/resturan kabab bonab.jpg'
+import adib from '../assets/restaurants/Adib.jpg'
+import arghavanRes from '../assets/restaurants/arghavan resturan.jpg'
+import farnamwich from '../assets/restaurants/farnamwich.jpg'
+import ariaFastfood from '../assets/restaurants/aria fastfood.jpg'
+import nabKababi from '../assets/restaurants/nab kababi.jpg'
+import donerKabab from '../assets/restaurants/doner kebab kab.jpg'
+
 
 
 export const IRANIP = 'ایرانی'
@@ -215,7 +224,8 @@ export const RESTAURANTS = [
         totalVote:375,
         category:IRANI,
         orders:'ایرانی، سنتی',
-        discount:''
+        discount:'',
+        image:aloghazayeman
     },
     {
         id:4,
@@ -226,7 +236,8 @@ export const RESTAURANTS = [
         totalVote:6507,
         category:IRANI,
         orders:'ایرانی، کباب، پیش غذا',
-        discount:''
+        discount:'',
+        image:resturankababbonab
     },
     {
         id:5,
@@ -237,7 +248,8 @@ export const RESTAURANTS = [
         totalVote:1604,
         category:IRANI,
         orders:'ایرانی، چلوکباب، چلوپلو ایرانی',
-        discount:'5%'
+        discount:'5%',
+        image:adib
     },
     {
         id:6,
@@ -248,7 +260,8 @@ export const RESTAURANTS = [
         totalVote:522,
         category:IRANI,
         orders:'ایرانی، چلوکباب، پیتزا ایتالیایی',
-        discount:'5%'
+        discount:'5%',
+        image:arghavanRes
     },
     {
         id:7,
@@ -273,6 +286,54 @@ export const RESTAURANTS = [
         orders:'فست فود، ساندویچ، پیتزا',
         discount:'5%',
         image:shilaPizzaFast
+    },
+    {
+        id:9,
+        title:'فست فود فرنام ویچ',
+        courierPrice :'رایگان',
+        courier : 'پیک فروشنده',
+        score:4.2,
+        totalVote:806,
+        category:FASTFOOD,
+        orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
+        discount:'',
+        image:farnamwich
+    },
+    {
+        id:10,
+        title:'فست فود آریا',
+        courierPrice :'19900',
+        courier : 'ارسال اکسپرس',
+        score:4.2,
+        totalVote:1090,
+        category:FASTFOOD,
+        orders:'فست فود، پیتزا آمریکایی، ساندویچ',
+        discount:'5%',
+        image:ariaFastfood
+    },
+    {
+        id:11,
+        title:'چلوکبابی ناب',
+        courierPrice :'19900',
+        courier : 'ارسال اکسپرس',
+        score:3.6,
+        totalVote:315,
+        category:KEBAB,
+        orders:'ایرانی، چلوکباب، پیش غذا',
+        discount:'',
+        image:nabKababi
+    },
+    {
+        id:12,
+        title:'دونر کباب',
+        courierPrice :'10000',
+        courier : 'پیک فروشنده',
+        score:3.7,
+        totalVote:255,
+        category:KEBAB,
+        orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
+        discount:'',
+        image:donerKabab
     },
     
 ]
