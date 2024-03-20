@@ -15,7 +15,7 @@
     max-width: 1200px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 35px;
     flex-wrap: wrap;
 
 }
@@ -25,8 +25,8 @@
     -moz-border-radius: 0.75rem;
     -ms-border-radius: 0.75rem;
     -o-border-radius: 0.75rem;
-    width: 150px;
-    height: 85px;
+    width: 170px;
+    height: 95px;
     position: relative;
     border: 1px solid white;
     box-shadow: 0 0 10px #00000046;
@@ -47,8 +47,8 @@
     bottom: 0;
     right: 0;
     background-color: white;
-    width: 60px;
-    height: 15px;
+    width: 75px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +57,9 @@
     -moz-border-radius: 5px 0 0 0;
     -ms-border-radius: 5px 0 0 0;
     -o-border-radius: 5px 0 0 0;
-    padding: 5px;
+    padding: 10px;
 }
 .categoryCard div p {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    color: black;
 }

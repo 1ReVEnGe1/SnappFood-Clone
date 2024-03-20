@@ -21,6 +21,7 @@ import meatImg from '../assets/headerCategory/desktop_11_603507afc9a32_img_st_me
 import nutImg from '../assets/headerCategory/desktop_7_60350883d6e43_img_st_nut.png'
 import icecreamImg from '../assets/headerCategory/desktop_8_6035087b463a3_img_st_icecream.png'
 import otherImg from '../assets/headerCategory/desktop_9_603b811b1d540_img_st_other2.png'
+import logo from '../assets/snappfood_logo.svg'
 //-----------restaurants------------------
 import badkonakFast from '../assets/restaurants/badkonak.jpg'
 import kababSaturiBonabRes from '../assets/restaurants/kabab saturi bonab azarbayjan.jpg'
@@ -34,9 +35,10 @@ import farnamwich from '../assets/restaurants/farnamwich.jpg'
 import ariaFastfood from '../assets/restaurants/aria fastfood.jpg'
 import nabKababi from '../assets/restaurants/nab kababi.jpg'
 import donerKabab from '../assets/restaurants/doner kebab kab.jpg'
+import defaultLogo from '../assets/restaurants/default logo.jpg'
 
 
-
+export const logoSnappFood = logo
 export const IRANIP = 'ایرانی'
 export const IRANI = 'irani'
 export const FASTFOODP = 'فست فود'
@@ -201,7 +203,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، چلوکباب، کباب',
         discount:'15%',
-        image: shayestehRes
+        image: shayestehRes,
+        logo:defaultLogo
     },
     {
         id:2,
@@ -213,7 +216,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، کباب',
         discount:'',
-        image: kababSaturiBonabRes
+        image: kababSaturiBonabRes,
+        logo:defaultLogo
     },
     {
         id:3,
@@ -225,7 +229,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، سنتی',
         discount:'',
-        image:aloghazayeman
+        image:aloghazayeman,
+        logo:defaultLogo
     },
     {
         id:4,
@@ -237,7 +242,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، کباب، پیش غذا',
         discount:'',
-        image:resturankababbonab
+        image:resturankababbonab,
+        logo:defaultLogo
     },
     {
         id:5,
@@ -249,7 +255,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، چلوکباب، چلوپلو ایرانی',
         discount:'5%',
-        image:adib
+        image:adib,
+        logo:defaultLogo
     },
     {
         id:6,
@@ -261,7 +268,8 @@ export const RESTAURANTS = [
         category:IRANI,
         orders:'ایرانی، چلوکباب، پیتزا ایتالیایی',
         discount:'5%',
-        image:arghavanRes
+        image:arghavanRes,
+        logo:defaultLogo
     },
     {
         id:7,
@@ -273,7 +281,8 @@ export const RESTAURANTS = [
         category:FASTFOOD,
         orders:'فست فود، پیتزا آمریکایی، پیتزا',
         discount:'',
-        image:badkonakFast
+        image:badkonakFast,
+        logo:defaultLogo
     },
     {
         id:8,
@@ -285,7 +294,8 @@ export const RESTAURANTS = [
         category:FASTFOOD,
         orders:'فست فود، ساندویچ، پیتزا',
         discount:'5%',
-        image:shilaPizzaFast
+        image:shilaPizzaFast,
+        logo:defaultLogo
     },
     {
         id:9,
@@ -297,7 +307,8 @@ export const RESTAURANTS = [
         category:FASTFOOD,
         orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
         discount:'',
-        image:farnamwich
+        image:farnamwich,
+        logo:defaultLogo
     },
     {
         id:10,
@@ -309,7 +320,8 @@ export const RESTAURANTS = [
         category:FASTFOOD,
         orders:'فست فود، پیتزا آمریکایی، ساندویچ',
         discount:'5%',
-        image:ariaFastfood
+        image:ariaFastfood,
+        logo:defaultLogo
     },
     {
         id:11,
@@ -321,7 +333,8 @@ export const RESTAURANTS = [
         category:KEBAB,
         orders:'ایرانی، چلوکباب، پیش غذا',
         discount:'',
-        image:nabKababi
+        image:nabKababi,
+        logo:defaultLogo
     },
     {
         id:12,
@@ -333,7 +346,8 @@ export const RESTAURANTS = [
         category:KEBAB,
         orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
         discount:'',
-        image:donerKabab
+        image:donerKabab,
+        logo:defaultLogo
     },
     
 ]
