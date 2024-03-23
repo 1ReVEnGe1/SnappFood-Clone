@@ -3,7 +3,7 @@ import Link from "next/link"
 import './RestaurantCard.css'
 const RestaurantCard = ({restaurant})=> {
     return(
-        <Link href={'/'} style={{width:'285px',border:'1px solid rgba(58, 61, 66, 0.06)',textDecoration:'none',height:'auto',borderRadius:10,overflow:'hidden',position:'relative'}}>
+        <Link href={`/${restaurant.category}/${restaurant.id}`} style={{width:'285px',border:'1px solid rgba(58, 61, 66, 0.06)',textDecoration:'none',height:'auto',borderRadius:10,overflow:'hidden',position:'relative'}}>
             <Image src={restaurant.image} style={{width:'100%',height:'120px',objectFit:'cover'}} alt={restaurant.title} />
             <div style={{height:'200px',display:'flex',justifyContent:'space-around',alignItems:'center',flexDirection:'column'}}>
                 <div >

@@ -36,6 +36,11 @@ import ariaFastfood from '../assets/restaurants/aria fastfood.jpg'
 import nabKababi from '../assets/restaurants/nab kababi.jpg'
 import donerKabab from '../assets/restaurants/doner kebab kab.jpg'
 import defaultLogo from '../assets/restaurants/default logo.jpg'
+//------------farnamwich--------------------
+import pizzaMakhlutItaliayi from '../assets/restaurants/farnamwich/pizza makhlut italyiayi.jpg'
+import pizzapepeeroniItaliayi from '../assets/restaurants/farnamwich/pizza pepeeroni italiayi.jpg' 
+import royalburger from '../assets/restaurants/farnamwich/royal burger zoghali.jpg' 
+import doubleburgur from '../assets/restaurants/farnamwich/double burger.jpg' 
 
 
 export const logoSnappFood = logo
@@ -288,14 +293,15 @@ export const RESTAURANTS = [
         id:8,
         title:'پیتزا شیلا',
         courierPrice :'12000',
-        courier : 'پیک ارسال اکسپرس',
+        courier : 'ارسال اکسپرس',
         score:4.8,
         totalVote:13801,
         category:FASTFOOD,
         orders:'فست فود، ساندویچ، پیتزا',
         discount:'5%',
         image:shilaPizzaFast,
-        logo:defaultLogo
+        logo:defaultLogo,
+        
     },
     {
         id:9,
@@ -308,7 +314,96 @@ export const RESTAURANTS = [
         orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
         discount:'',
         image:farnamwich,
-        logo:defaultLogo
+        logo:defaultLogo,
+        products:[
+            {
+                id:1,
+                category:PIZZAP,
+                model:'پیتزا پپرونی ایتالیایی',
+                recipe:'خمیر پیتزا ایتالیایی، کاباس پپرونی گوشت ۹۰%، قارچ، فلفل دلمه ای، ذرت، زیتون، پنیر پیتزا',
+                image:pizzapepeeroniItaliayi,
+                options:[
+                    {
+                        id:1,
+                        title:'خانواده (32 سانتی متری)',
+                        price:200000,
+                        
+                    },
+                    {
+                        id:2,
+                        title:'یک نفره (24 سانتی متری)',
+                        price:95000
+                    },
+                    {
+                        id:3,
+                        title:'دونفره (28 سانتی متری)',
+                        price:145000
+                    },
+                ]    
+            },
+            {
+                id:2,
+                category:PIZZAP,
+                model:'پیتزا مخلوط ایتالیایی',
+                recipe:'خمیر پیتزا آمریکایی، ژامبون مخلوط گوشت و مرغ ۸۰%، قارچ، ذرت، زیتون، پنیر پیتزا',
+                image:pizzaMakhlutItaliayi,
+                options:[
+                    {
+                        id:1,
+                        title:'خانواده (32 سانتی متری)',
+                        price:200000
+                    },
+                    {
+                        id:2,
+                        title:'یک نفره (24 سانتی متری)',
+                        price:95000
+                    },
+                    {
+                        id:3,
+                        title:'دونفره (28 سانتی متری)',
+                        price:150000
+                    },
+                ]
+            },
+            {
+                id:3,
+                category:BURGURP,
+                model:'رویال برگر ذغالی',
+                recipe:'یک عدد برگر شرکتی گوشت ۶۰%، خیارشور، گوجه، یک ورق ژامبون گوشت و مرغ ۸۰%، قارچ و پنیر پیتزا، نان گرد',
+                image:royalburger,
+                options:[
+                    {
+                        id:1,
+                        title:'ساده',
+                        price:100000
+                    },
+                    {
+                        id:2,
+                        title:'با قارچ و پنیر',
+                        price:120000
+                    }
+                ]    
+            },
+            {
+                id:4,
+                category:BURGURP,
+                model:'دبل برگر',
+                recipe:'۲ عدد برگر شرکتی گوشت ۶۰%، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان گرد',
+                image:doubleburgur,
+                options:[
+                    {
+                        id:1,
+                        title:'ساده',
+                        price:100000
+                    },
+                    {
+                        id:2,
+                        title:'با قارچ و پنیر',
+                        price:125000
+                    },
+                ]   
+            },
+        ]
     },
     {
         id:10,
