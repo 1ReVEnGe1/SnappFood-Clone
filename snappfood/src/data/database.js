@@ -327,17 +327,28 @@ export const RESTAURANTS = [
                         id:1,
                         title:'خانواده (32 سانتی متری)',
                         price:200000,
-                        
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا پپرونی ایتالیایی خانواده (32 سانتی متری)'
                     },
                     {
                         id:2,
                         title:'یک نفره (24 سانتی متری)',
-                        price:95000
+                        price:95000,
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا پپرونی ایتالیایی یک نفره (24 سانتی متری)'
                     },
                     {
                         id:3,
                         title:'دونفره (28 سانتی متری)',
-                        price:145000
+                        price:145000,
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا پپرونی ایتالیایی دونفره (28 سانتی متری)'
                     },
                 ]    
             },
@@ -349,19 +360,31 @@ export const RESTAURANTS = [
                 image:pizzaMakhlutItaliayi,
                 options:[
                     {
-                        id:1,
+                        id:4,
                         title:'خانواده (32 سانتی متری)',
-                        price:200000
+                        price:200000,
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا مخلوط ایتالیایی خانواده (32 سانتی متری)'
                     },
                     {
-                        id:2,
+                        id:5,
                         title:'یک نفره (24 سانتی متری)',
-                        price:95000
+                        price:95000,
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا مخلوط ایتالیایی یک نفره (24 سانتی متری)'
                     },
                     {
-                        id:3,
+                        id:6,
                         title:'دونفره (28 سانتی متری)',
-                        price:150000
+                        price:150000,
+                        category:PIZZAP,
+                        seller:'فست فود فرنام ویچ',
+                        image:farnamwich,
+                        fullTitle:'پیتزا مخلوط ایتالیایی دونفره (28 سانتی متری)'
                     },
                 ]
             },
@@ -373,14 +396,22 @@ export const RESTAURANTS = [
                 image:royalburger,
                 options:[
                     {
-                        id:1,
+                        id:7,
                         title:'ساده',
-                        price:100000
+                        price:100000,
+                        category:BURGURP,
+                        seller:'فست فود فرنام ویچ',
+                        image:royalburger,
+                        fullTitle:'رویال برگر ذغالی دونفره ساده'
                     },
                     {
-                        id:2,
+                        id:8,
                         title:'با قارچ و پنیر',
-                        price:120000
+                        price:120000,
+                        category:BURGURP,
+                        seller:'فست فود فرنام ویچ',
+                        image:royalburger,
+                        fullTitle:'رویال برگر ذغالی با قارچ و پنیر'
                     }
                 ]    
             },
@@ -392,14 +423,22 @@ export const RESTAURANTS = [
                 image:doubleburgur,
                 options:[
                     {
-                        id:1,
+                        id:9,
                         title:'ساده',
-                        price:100000
+                        price:100000,
+                        category:BURGURP,
+                        seller:'فست فود فرنام ویچ',
+                        image:doubleburgur,
+                        fullTitle:'دبل برگر ساده'
                     },
                     {
-                        id:2,
+                        id:10,
                         title:'با قارچ و پنیر',
-                        price:125000
+                        price:125000,
+                        category:BURGURP,
+                        seller:'فست فود فرنام ویچ',
+                        image:doubleburgur,
+                        fullTitle:'دبل برگر با قارچ و پنیر'
                     },
                 ]   
             },

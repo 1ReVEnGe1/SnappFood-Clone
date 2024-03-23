@@ -1,8 +1,14 @@
+'use client'
 import { logoSnappFood } from "@/data/database"
 import Image from "next/image"
 import Link from "next/link"
+import { useSelector } from "react-redux"
 
 const HeaderTop = ()=> {
+    const {cart} = useSelector( store => store.cart)
+    const productsCount = cart.reduce( (init,current)=> init = init + current.count,0 )
+    
+    
     return(
         <div style={{display:'flex',justifyContent:'space-between',padding:'7px 15px 7px 15px'}}>
             <div style={{display:'flex',gap:'40px'}}>
@@ -18,7 +24,7 @@ const HeaderTop = ()=> {
             </div>
             <div style={{display:'flex',gap:'20px',justifyContent:'center',alignItems:'center'}}>
                 <div >admak</div>
-                <div>سفارش ها</div>
+                <div>سفارش ها({productsCount})</div>
             </div>
 
         </div>

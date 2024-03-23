@@ -1,11 +1,13 @@
-
+import { categoryProvider } from "@/utils/categoryProvider"
 import { RESTAURANTS } from "@/data/database"
 import RestaurantCard from "@/components/RestaurantCard"
 
 const category = ({params})=> {
     const categoryTitle = params.category
-    const RESTAURANTS_LIST = RESTAURANTS.filter(restaurant => restaurant.category === categoryTitle)
+    const RESTAURANTS_LIST=categoryProvider(RESTAURANTS , categoryTitle )
 
+
+    
     return (
         <>
             <main style={{width:'100%'}}>
