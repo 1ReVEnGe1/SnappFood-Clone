@@ -6,15 +6,21 @@ import { calculateProfit } from "@/utils/calculateProfit"
 import { calculateShoppingCart } from "@/utils/calculateShoppingCart"
 import { useCallback, useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { TAX } from "@/data/database"
+import { calculateTax } from "@/utils/calculateTax"
 
-const CartPage = ()=> {
-    const {cart} = useSelector(store => store.cart)
-    
+
+const CartPage = ({singleRes})=> {
+    const {cart} = useSelector(store => store.cart)    
     const totalPrice = useMemo(()=> calculateShoppingCart(cart), [cart]) 
     const profit = useMemo(()=> calculateProfit(cart), [cart]) 
+    const tax = useMemo(()=> calculateTax(totalPrice),[totalPrice])
+
     const totalProducts = cart.reduce( (init, current)=> current.count + init , 0 )
     console.log(cart)
     const dispatch = useDispatch()
+    
+    
 
     const handleAddToCart = useCallback((product)=> {
         dispatch(addToCart(product))
@@ -68,21 +74,31 @@ const CartPage = ()=> {
                             
                         ))
                     }
+                    
                     <div>
-                        <div>
-                            
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
+                            <span>مجموع</span>
+                            <span>{totalPrice}</span>
                         </div>
-                        <div>
+                    
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
+                            <span>مالیات</span>
+                            <span>{tax}</span>
+                        </div>
 
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
+                            <span>هزینه ارسال</span>
+                            <span>{singleRes.courierPrice}</span>
                         </div>
-                    </div>
-                    <div>
-                        جمع کل 
-                        {totalPrice >0 ? totalPrice : <p>سبد خرید شما خالی است</p>}
+                        <div style={{display:'flex',justifyContent:'space-between'}}>
+                            <span>سود شما</span>
+                            <span>{profit}</span>
+                        </div>
+                        
                         <div>
-                            {profit}سود شما
-
+                            <span>هزینه ارسال</span>
                         </div>
+                        
                     </div>
                     
                 </div>    

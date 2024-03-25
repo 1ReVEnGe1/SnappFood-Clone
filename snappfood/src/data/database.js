@@ -68,6 +68,7 @@ export const INTERNATIONALP = 'بین الملل'
 export const INTERNATIONAL = 'asian'
 export const GILANIP = 'گیلانی'
 export const GILANI = 'gilani'
+export const TAX = 10
 
 export const CATEGORIES =[
     {

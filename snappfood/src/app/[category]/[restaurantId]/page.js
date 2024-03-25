@@ -2,21 +2,20 @@ import { RESTAURANTS } from "@/data/database"
 import ProductList from "@/components/ProductList"
 import CartPage from "@/components/CartPage"
 import Link from "next/link"
-import { useMemo } from "react"
-import { useSelector } from "react-redux"
+import { findRestaurantById } from "@/utils/findRestaurantById"
+
+
 
 const restaurant = ({params})=> {
     const restaurantId = Number(params.restaurantId) 
-    const singleRes = RESTAURANTS.filter( restaurant => restaurant.id === restaurantId )[0]
+    const singleRes = findRestaurantById(RESTAURANTS , restaurantId)
+
     const subtitle = singleRes.products.find( product => product.category === 'پیتزا')
     const subtitle2 = singleRes.products.find( product => product.category === 'برگر')
     const subtitlePizzaDetails = singleRes.products.filter( product => product.category === 'پیتزا')
     const subtitleBurgurDetails = singleRes.products.filter( product => product.category === 'برگر')
 
-    // const {cart}= useSelector( store => store.cart)
-    // const totalPrice = useMemo(()=>{
-    //     cart.reduce((init, current)=> (current.price * current.count) + init ,0 )
-    // }, [cart]) 
+    
 
     return(
         <div style={{backgroundColor:'#F9FAFB'}}>
@@ -66,7 +65,7 @@ const restaurant = ({params})=> {
                         {singleRes.courier === 'رایگان' ? 'تومان' : ' '}
                         {singleRes.courierPrice}
                     </div>
-                    <CartPage />
+                    <CartPage singleRes={singleRes} />
                 </div>
             </div>
         </div>
