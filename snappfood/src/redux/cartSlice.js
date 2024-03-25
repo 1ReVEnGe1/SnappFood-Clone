@@ -13,6 +13,7 @@ const cartSlice = createSlice({
             //     seller:'فرنام ویچ',
             //     price:200000,
             //     fullTitle:'پیتزا پپرونی ایتالیایی 24 سانتی',
+            //     discount:5
             //     count:2,
             // }
 
@@ -29,10 +30,18 @@ const cartSlice = createSlice({
                 state.cart[index].count += 1
             }
         },
-        deleteItem : ()=> {}
+        decreaseItem : (state , action)=> {
+            //action : product
+            const index = state.cart.findIndex( item => item.id === action.payload.id )
+            state.cart[index].count -= 1
+        },
+        deleteItem : (state , action)=> {
+            const index = state.cart.findIndex( item => item.id === action.payload.id )
+            state.cart.splice(index , 1)
+        }
     }
 })
 
 
-export const {addToCart} = cartSlice.actions
+export const {addToCart , deleteItem, decreaseItem} = cartSlice.actions
 export default cartSlice.reducer

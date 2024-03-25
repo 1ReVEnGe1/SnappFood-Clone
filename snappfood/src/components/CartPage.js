@@ -1,10 +1,11 @@
 'use client'
 
 
+import { addToCart, decreaseItem, deleteItem } from "@/redux/cartSlice"
 import { calculateProfit } from "@/utils/calculateProfit"
 import { calculateShoppingCart } from "@/utils/calculateShoppingCart"
-import { useMemo } from "react"
-import { useSelector } from "react-redux"
+import { useCallback, useMemo } from "react"
+import { useDispatch, useSelector } from "react-redux"
 
 const CartPage = ()=> {
     const {cart} = useSelector(store => store.cart)
@@ -13,6 +14,18 @@ const CartPage = ()=> {
     const profit = useMemo(()=> calculateProfit(cart), [cart]) 
     const totalProducts = cart.reduce( (init, current)=> current.count + init , 0 )
     console.log(cart)
+    const dispatch = useDispatch()
+
+    const handleAddToCart = useCallback((product)=> {
+        dispatch(addToCart(product))
+    } , [])
+
+    const handleDecreaseItem = useCallback((product)=> {
+        dispatch(decreaseItem(product))
+    } , [])
+    const handleDeleteItem = useCallback((product)=> {
+        dispatch(deleteItem(product))
+    } , [])
 
 
     return (
@@ -26,22 +39,31 @@ const CartPage = ()=> {
                             <div>
                                 <p>{product.fullTitle}</p>
                                 <div style={{display:'flex',justifyContent:'space-between'}}>
-                                    <div style={{display:'flex'}}>
+                                    <div style={{display:'flex',gap:'5px'}}>
                                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',fontWeight:'bold',width:'fit-content',padding:3,borderRadius:5,height:'25px',backgroundColor:'rgba(255, 0, 166, 0.06)'}}>
                                             <span style={{color:'rgb(255, 0, 166)',fontSize:'14px'}}>{product.discount}% </span>
                                         </div>
-                                        <div>
-                                            <span><s>{product.price} تومان</s></span>
+                                        <div style={{display:'flex',flexDirection:'column',fontSize:'11px',gap:'3px'}}>
+                                            <span><s style={{color:'rgb(166, 170, 173)'}}>{product.price} تومان</s></span>
                                             <span>{product.price * (100 - product.discount)/100} تومان</span>
                                         </div>
                                     </div>
                                     
                                     <div>
-                                        <button style={{padding:'6px 6px'}}>+</button>
+                                        
+                                        <button onClick={()=> handleAddToCart(product)} style={{padding:'6px 6px'}}>+</button>
                                         {product.count}
-                                        <button style={{padding:'6px 6px'}}>-</button>
+                                        {
+                                            product.count > 1 ?  
+                                                <button onClick={()=> handleDecreaseItem(product)} style={{padding:'6px 6px'}}>-</button>
+                                                    : 
+                                                        <button onClick={()=> handleDeleteItem(product)} style={{padding:'6px 6px'}}>trash</button>
+
+                                        }
+                                        
                                     </div>
                                 </div>
+                                <hr />
                             </div>
                             
                         ))
