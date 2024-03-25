@@ -312,7 +312,7 @@ export const RESTAURANTS = [
         totalVote:806,
         category:FASTFOOD,
         orders:'فست فود، پیتزا ایتالیایی، ساندویچ',
-        discount:'',
+        discount:'10%',
         image:farnamwich,
         logo:defaultLogo,
         products:[
@@ -330,7 +330,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا پپرونی ایتالیایی خانواده (32 سانتی متری)'
+                        fullTitle:'پیتزا پپرونی ایتالیایی خانواده (32 سانتی متری)',
+                        discount:'5'
                     },
                     {
                         id:2,
@@ -339,7 +340,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا پپرونی ایتالیایی یک نفره (24 سانتی متری)'
+                        fullTitle:'پیتزا پپرونی ایتالیایی یک نفره (24 سانتی متری)',
+                        discount:'10'
                     },
                     {
                         id:3,
@@ -348,7 +350,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا پپرونی ایتالیایی دونفره (28 سانتی متری)'
+                        fullTitle:'پیتزا پپرونی ایتالیایی دونفره (28 سانتی متری)',
+                        discount:'10'
                     },
                 ]    
             },
@@ -366,7 +369,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا مخلوط ایتالیایی خانواده (32 سانتی متری)'
+                        fullTitle:'پیتزا مخلوط ایتالیایی خانواده (32 سانتی متری)',
+                        discount:'5'
                     },
                     {
                         id:5,
@@ -375,7 +379,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا مخلوط ایتالیایی یک نفره (24 سانتی متری)'
+                        fullTitle:'پیتزا مخلوط ایتالیایی یک نفره (24 سانتی متری)',
+                        discount:'15'
                     },
                     {
                         id:6,
@@ -384,7 +389,8 @@ export const RESTAURANTS = [
                         category:PIZZAP,
                         seller:'فست فود فرنام ویچ',
                         image:farnamwich,
-                        fullTitle:'پیتزا مخلوط ایتالیایی دونفره (28 سانتی متری)'
+                        fullTitle:'پیتزا مخلوط ایتالیایی دونفره (28 سانتی متری)',
+                        discount:'50'
                     },
                 ]
             },
@@ -402,7 +408,8 @@ export const RESTAURANTS = [
                         category:BURGURP,
                         seller:'فست فود فرنام ویچ',
                         image:royalburger,
-                        fullTitle:'رویال برگر ذغالی دونفره ساده'
+                        fullTitle:'رویال برگر ذغالی دونفره ساده',
+                        discount:'2'
                     },
                     {
                         id:8,
@@ -411,7 +418,8 @@ export const RESTAURANTS = [
                         category:BURGURP,
                         seller:'فست فود فرنام ویچ',
                         image:royalburger,
-                        fullTitle:'رویال برگر ذغالی با قارچ و پنیر'
+                        fullTitle:'رویال برگر ذغالی با قارچ و پنیر',
+                        discount:'9'
                     }
                 ]    
             },
@@ -429,7 +437,8 @@ export const RESTAURANTS = [
                         category:BURGURP,
                         seller:'فست فود فرنام ویچ',
                         image:doubleburgur,
-                        fullTitle:'دبل برگر ساده'
+                        fullTitle:'دبل برگر ساده',
+                        discount:'32'
                     },
                     {
                         id:10,
@@ -438,7 +447,8 @@ export const RESTAURANTS = [
                         category:BURGURP,
                         seller:'فست فود فرنام ویچ',
                         image:doubleburgur,
-                        fullTitle:'دبل برگر با قارچ و پنیر'
+                        fullTitle:'دبل برگر با قارچ و پنیر',
+                        discount:'12'
                     },
                 ]   
             },

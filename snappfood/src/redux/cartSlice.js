@@ -5,16 +5,16 @@ const cartSlice = createSlice({
     initialState:{
         userId:1,
         cart:[
-            {
-                id:1,
-                title:'پیتزا پپرونی ایتالیایی 24 سانتی',
-                image:'',
-                category:'پیتزا',
-                seller:'فرنام ویچ',
-                price:2000,
-                fullTitle:'پیتزا پپرونی ایتالیایی 24 سانتی',
-                count:2,
-            }
+            // {
+            //     id:1,
+            //     title:'پیتزا پپرونی ایتالیایی 24 سانتی',
+            //     image:'',
+            //     category:'پیتزا',
+            //     seller:'فرنام ویچ',
+            //     price:200000,
+            //     fullTitle:'پیتزا پپرونی ایتالیایی 24 سانتی',
+            //     count:2,
+            // }
 
         ]
     },
