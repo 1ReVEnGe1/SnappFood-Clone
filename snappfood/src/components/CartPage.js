@@ -8,7 +8,7 @@ import { useCallback, useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import { calculateTax } from "@/utils/calculateTax"
-import { calculateFinalPayement } from "@/utils/calculateFinalPayement"
+import { calculateFinalPayment } from "@/utils/calculateFinalPayment"
 
 
 const CartPage = ({singleRes})=> {
@@ -16,7 +16,8 @@ const CartPage = ({singleRes})=> {
     const totalPrice = useMemo(()=> calculateShoppingCart(cart), [cart]) 
     const profit = useMemo(()=> calculateProfit(cart), [cart]) 
     const tax = useMemo(()=> calculateTax(totalPrice),[totalPrice])
-    const finalPayment =useMemo(()=>calculateFinalPayement(tax, profit, totalPrice, singleRes.courierPrice) ,[totalPrice,profit,tax]) 
+    const finalPayment =useMemo(()=>calculateFinalPayment(tax, profit, totalPrice, singleRes.courierPrice) ,[totalPrice,profit,tax]) 
+
     const totalProducts = cart.reduce( (init, current)=> current.count + init , 0 )
     console.log(cart)
     const dispatch = useDispatch()
@@ -43,7 +44,7 @@ const CartPage = ({singleRes})=> {
                     <h2>سبد خرید ({totalProducts})</h2>
                     {
                         cart.map( product =>(
-                            <div>
+                            <div style={{marginBottom:10}} >
                                 <p>{product.fullTitle}</p>
                                 <div style={{display:'flex',justifyContent:'space-between'}}>
                                     <div style={{display:'flex',gap:'5px'}}>
@@ -70,7 +71,7 @@ const CartPage = ({singleRes})=> {
                                         
                                     </div>
                                 </div>
-                                <hr />
+                                <hr style={{marginTop:10}} />
                             </div>
                             
                         ))

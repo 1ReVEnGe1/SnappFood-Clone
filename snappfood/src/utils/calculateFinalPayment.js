@@ -1,4 +1,4 @@
-export const calculateFinalPayement = (tax, profit, totalPrice, courierPrice)=> {
+export const calculateFinalPayment = (tax, profit, totalPrice, courierPrice)=> {
     const isFreeCourierPrice = courierPrice === 'رایگان'
     if(isFreeCourierPrice){
          return totalPrice - profit + tax 
