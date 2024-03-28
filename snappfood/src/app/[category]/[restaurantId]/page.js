@@ -15,18 +15,13 @@ import RestaurantCategoryList from "@/components/RestaurantCategoryList"
 
 
 const restaurant = ({ params }) => {
+    const [popUpDelete, setPopUpDelete] = useState(false)
+    const dispatch = useDispatch()
+
     const restaurantId = Number(params.restaurantId)
     const singleRes = findRestaurantById(RESTAURANTS, restaurantId)
 
-    const subtitle = singleRes.products.find(product => product.category === 'پیتزا')
-    const subtitle2 = singleRes.products.find(product => product.category === 'برگر')
-    const subtitle3 = singleRes.products.find(product => product.category === 'ساندویچ')
-    const subtitlePizzaDetails = singleRes.products.filter(product => product.category === 'پیتزا')
-    const subtitleBurgurDetails = singleRes.products.filter(product => product.category === 'برگر')
-    const subtitleSandDetails = singleRes.products.filter(product => product.category === 'ساندویچ')
-    const [popUpDelete, setPopUpDelete] = useState(false)
 
-    const dispatch = useDispatch()
     const togglePopUpDelete = useCallback(() => {
         setPopUpDelete(prevPopUp => !prevPopUp)
     }, [popUpDelete])
@@ -40,7 +35,7 @@ const restaurant = ({ params }) => {
 
 
     return (
-        <div style={{ backgroundColor: '#F9FAFB' }}>
+        <div style={{ backgroundColor: '#F9FAFB',zIndex:'9999' }}>
             {popUpDelete &&
                 <div style={{ width: '100%', height: '100vh', backgroundColor: 'rgba(0,0,0,0.4)', position: 'fixed', top: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div style={{ backgroundColor: '#fff', boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 8px 32px', borderRadius: '0.75rem', width: '30rem' }}>

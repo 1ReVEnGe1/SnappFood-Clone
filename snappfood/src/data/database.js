@@ -325,6 +325,7 @@ export const RESTAURANTS = [
                 model:'پیتزا پپرونی ایتالیایی',
                 recipe:'خمیر پیتزا ایتالیایی، کاباس پپرونی گوشت ۹۰%، قارچ، فلفل دلمه ای، ذرت، زیتون، پنیر پیتزا',
                 image:pizzapepeeroniItaliayi,
+                score:4.2,
                 options:[
                     {
                         id:1,
@@ -364,6 +365,7 @@ export const RESTAURANTS = [
                 model:'پیتزا مخلوط ایتالیایی',
                 recipe:'خمیر پیتزا آمریکایی، ژامبون مخلوط گوشت و مرغ ۸۰%، قارچ، ذرت، زیتون، پنیر پیتزا',
                 image:pizzaMakhlutItaliayi,
+                score:4.2,
                 options:[
                     {
                         id:4,
@@ -403,6 +405,7 @@ export const RESTAURANTS = [
                 model:'رویال برگر ذغالی',
                 recipe:'یک عدد برگر شرکتی گوشت ۶۰%، خیارشور، گوجه، یک ورق ژامبون گوشت و مرغ ۸۰%، قارچ و پنیر پیتزا، نان گرد',
                 image:royalburger,
+                score:4.2,
                 options:[
                     {
                         id:7,
@@ -432,6 +435,7 @@ export const RESTAURANTS = [
                 model:'دبل برگر',
                 recipe:'۲ عدد برگر شرکتی گوشت ۶۰%، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان گرد',
                 image:doubleburgur,
+                score:4.2,
                 options:[
                     {
                         id:9,
@@ -461,6 +465,7 @@ export const RESTAURANTS = [
                 model:'ساندویچ برگر و هات داگ رویال',
                 recipe:'یک عدد برگر شرکتی گوشت ۹۰%، ۱۵۰ گرم ژامبون گوشت ۹۰%، یک عدد هات داگ گوشت ۸۰%، قارچ، پنیر پیتزا، سس مخصوص، نان باگت',
                 image:burgurHotdogSand,
+                score:4.2,
                 options:[
                     {
                         id:11,
@@ -481,6 +486,7 @@ export const RESTAURANTS = [
                 model:'ساندویچ زاپاتا',
                 recipe:'۱۵۰ گرم ژامبون گوشت ۹۰%، ، یک عدد برگر شرکتی ۹۰% گوشت، ۱۰۰ گرم فیله مرغ گریل شده، قارچ، پنیر پیتزا، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان باگت',
                 image:zapataSand,
+                score:4.2,
                 options:[
                     {
                         id:12,

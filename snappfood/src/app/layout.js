@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header';
 import './global.css'
 import localFont from 'next/font/local'
 import HeaderTop from '@/components/HeaderTop';
@@ -15,7 +14,7 @@ export default function RootLayout({ children }) {
       <body dir="rtl"  >
         <Provider store={store}>
           <HeaderTop />
-          <Header />
+          
           {children}
         </Provider>
         
