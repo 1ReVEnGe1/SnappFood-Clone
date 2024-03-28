@@ -40,7 +40,9 @@ import defaultLogo from '../assets/restaurants/default logo.jpg'
 import pizzaMakhlutItaliayi from '../assets/restaurants/farnamwich/pizza makhlut italyiayi.jpg'
 import pizzapepeeroniItaliayi from '../assets/restaurants/farnamwich/pizza pepeeroni italiayi.jpg' 
 import royalburger from '../assets/restaurants/farnamwich/royal burger zoghali.jpg' 
-import doubleburgur from '../assets/restaurants/farnamwich/double burger.jpg' 
+import doubleburgur from '../assets/restaurants/farnamwich/double burger.jpg'
+import burgurHotdogSand from '../assets/restaurants/farnamwich/sandwich burgur va hotdog royal.jpg'
+import zapataSand from '../assets/restaurants/farnamwich/sandwich zapata.jpg'
 
 
 export const logoSnappFood = logo
@@ -450,6 +452,45 @@ export const RESTAURANTS = [
                         image:doubleburgur,
                         fullTitle:'دبل برگر با قارچ و پنیر',
                         discount:'12'
+                    },
+                ]   
+            },
+            {
+                id:5,
+                category:SANDWICHP,
+                model:'ساندویچ برگر و هات داگ رویال',
+                recipe:'یک عدد برگر شرکتی گوشت ۹۰%، ۱۵۰ گرم ژامبون گوشت ۹۰%، یک عدد هات داگ گوشت ۸۰%، قارچ، پنیر پیتزا، سس مخصوص، نان باگت',
+                image:burgurHotdogSand,
+                options:[
+                    {
+                        id:11,
+                        title:'',
+                        price:125000,
+                        category:SANDWICHP,
+                        seller:'فست فود فرنام ویچ',
+                        image:burgurHotdogSand,
+                        fullTitle:'ساندویچ برگر و هات داگ رویال',
+                        discount:''
+                    },
+                    
+                ]   
+            },
+            {
+                id:6,
+                category:SANDWICHP,
+                model:'ساندویچ زاپاتا',
+                recipe:'۱۵۰ گرم ژامبون گوشت ۹۰%، ، یک عدد برگر شرکتی ۹۰% گوشت، ۱۰۰ گرم فیله مرغ گریل شده، قارچ، پنیر پیتزا، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان باگت',
+                image:zapataSand,
+                options:[
+                    {
+                        id:12,
+                        title:'',
+                        price:115000,
+                        category:SANDWICHP,
+                        seller:'فست فود فرنام ویچ',
+                        image:doubleburgur,
+                        fullTitle:'ساندویچ زاپاتا',
+                        discount:''
                     },
                 ]   
             },
