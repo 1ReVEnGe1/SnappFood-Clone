@@ -11,8 +11,9 @@ import { clearCart } from "@/redux/cartSlice"
 import Image from "next/image"
 import { uniqueArrayElementMaker } from "@/utils/uniqueArrayElementMaker"
 import RestaurantCategoryList from "@/components/RestaurantCategoryList"
-
-
+//css files
+import './popupDeleteCard.css'
+import './breadCrumbRestaurantPage.css'
 
 const restaurant = ({ params }) => {
     const [popUpDelete, setPopUpDelete] = useState(false)
@@ -35,24 +36,36 @@ const restaurant = ({ params }) => {
 
 
     return (
-        <div style={{ backgroundColor: '#F9FAFB',zIndex:'9999' }}>
+        <main style={{ backgroundColor: '#F9FAFB' }} >
             {popUpDelete &&
-                <div style={{ width: '100%', height: '100vh', backgroundColor: 'rgba(0,0,0,0.4)', position: 'fixed', top: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <div style={{ backgroundColor: '#fff', boxShadow: 'rgba(0, 0, 0, 0.08) 0px 2px 8px, rgba(0, 0, 0, 0.16) 0px 8px 32px', borderRadius: '0.75rem', width: '30rem' }}>
-                        <p style={{ padding: '1rem' }}>آیا از حذف سبد خرید خود مطمئن هستید ؟</p>
+                <div className="popup-overlay">
+                    <div className="popup-contentbox" >
+                        <p>آیا از حذف سبد خرید خود مطمئن هستید ؟</p>
                         <div>
-                            <button onClick={togglePopUpDelete} >انصراف</button>
-                            <button onClick={handleClearCart}>حذف سبد خرید</button>
+                            <button className="reject-modal-btn" onClick={togglePopUpDelete} >انصراف</button>
+                            <button className="accept-modal-btn" onClick={handleClearCart}>حذف سبد خرید</button>
                         </div>
                     </div>
                 </div>
             }
 
 
-            <div>{params.category}/{singleRes.title}</div>
+            <div className="breadcrumb-restaurant-page">
+                <Link href={`/`}>
+                    اسنپ فود
+                </Link>
+                /
+                <Link href={`/${params.category}`}>
+                    {params.category}
+                </Link>
+                /
+                {singleRes.title}
 
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+            </div>
+
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', padding: '4.25rem 1rem 1rem' }}>
 
                 {/* rightBar */}
                 <aside style={{ width: '28%', padding: '1rem' }}>
@@ -89,7 +102,7 @@ const restaurant = ({ params }) => {
                 </aside>
 
                 {/* middle */}
-                <main style={{ width: '44%', borderRadius: 8 }}>
+                <section style={{ width: '44%', borderRadius: 8 }}>
                     {
                         resProductsCategory.map(productCategory => (
                             <div key={productCategory}>
@@ -100,7 +113,7 @@ const restaurant = ({ params }) => {
                                     <hr />
                                 </div>
                                 <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                    {singleRes.products.map(item => (  
+                                    {singleRes.products.map(item => (
                                         <ProductList key={item.id} item={item} productCategory={productCategory} />
                                     ))}
                                 </div>
@@ -108,7 +121,7 @@ const restaurant = ({ params }) => {
                             </div>
                         ))
                     }
-                </main>
+                </section>
 
                 {/* leftBar */}
 
@@ -139,7 +152,7 @@ const restaurant = ({ params }) => {
 
                 </aside>
             </div>
-        </div>
+        </main>
     )
 }
 

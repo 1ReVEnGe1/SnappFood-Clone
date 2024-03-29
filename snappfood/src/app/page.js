@@ -1,8 +1,8 @@
 import { CATEGORIES } from "@/data/database";
-import './mainPage.css'
 import MainCategoryItems from "@/components/MainCategoryItems";
 import Header from "@/components/Header";
-
+//css files
+import './mainPage.css'
 
 export default function Home() {
 
