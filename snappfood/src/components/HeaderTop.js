@@ -10,7 +10,7 @@ const HeaderTop = () => {
 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 15px 7px 15px',backgroundColor:'#fff' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 15px 7px 15px',backgroundColor:'#fff',boxShadow:'rgba(58, 61, 66, 0.06) 0px 1px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px' }}>
             <div style={{ display: 'flex', gap: '40px',backgroundColor:'#fff' }}>
                 <Link href={'/'} style={{ width: '60px', height: '60px' }}>
                     <Image style={{ width: '100%', height: '100%' }} src={logoSnappFood} alt={'لوگو اسنپ فود'} />

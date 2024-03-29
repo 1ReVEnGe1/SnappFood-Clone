@@ -1,4 +1,19 @@
 .breadcrumb-restaurant-page{
     margin-top: 1.5625rem;
     padding-right: 1.25rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 9px;
+    align-items: center;
+}
+.breadcrumb-restaurant-page a {
+    font-size: 0.625rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.breadcrumb-restaurant-page p {
+    font-size: 0.625rem;
 }
