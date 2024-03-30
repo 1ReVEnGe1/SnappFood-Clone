@@ -149,7 +149,7 @@ const restaurant = ({ params }) => {
                                         {singleRes.courierPrice}</p>
 
                                 </div>
-                                <CartPage singleRes={singleRes} togglePopUpDelete={togglePopUpDelete} />
+                                <CartPage singleRes={singleRes} togglePopUpDelete={togglePopUpDelete} routes={params} />
                             </div>
 
                         </aside>
