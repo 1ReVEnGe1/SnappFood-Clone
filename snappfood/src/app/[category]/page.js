@@ -2,6 +2,7 @@ import { categoryProvider } from "@/utils/categoryProvider"
 import { RESTAURANTS } from "@/data/database"
 import RestaurantCard from "@/components/RestaurantCard"
 import Header from "@/components/Header"
+import HeaderTop from "@/components/HeaderTop"
 
 const category = ({ params }) => {
     const categoryTitle = params.category
@@ -11,6 +12,7 @@ const category = ({ params }) => {
 
     return (
         <>
+            <HeaderTop />
             <Header />
             <main style={{ width: '100%' }}>
                 <div style={{ width: '100%' }}>

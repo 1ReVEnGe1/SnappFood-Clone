@@ -27,15 +27,15 @@ const CartCard = ({ product }) => {
 
     return (
         <div style={{ marginBottom: 10 }} >
-            <p>{product.fullTitle}</p>
+            <p style={{color:'rgb(58, 61, 66)',fontSize:'0.875rem',fontWeight:'700'}}>{product.fullTitle}</p>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex', gap: '5px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'bold', width: 'fit-content', padding: 3, borderRadius: 5, height: '25px', backgroundColor: 'rgba(255, 0, 166, 0.06)' }}>
-                        <span style={{ color: 'rgb(255, 0, 166)', fontSize: '14px' }}>{product.discount}% </span>
+                <div style={{ display: 'flex', gap: '5px',justifyContent:'center',alignItems:'center' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 'bold', width: 'fit-content', padding:'0.145rem 0.15rem', borderRadius: 5, height: '25px', backgroundColor: 'rgba(255, 0, 166, 0.06)' }}>
+                        <span style={{ color: 'rgb(255, 0, 166)', fontSize: '14px',fontWeight:700 }}>% {product.discount} </span>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', fontSize: '11px', gap: '3px' }}>
-                        <span><s style={{ color: 'rgb(166, 170, 173)' }}>{product.price} تومان</s></span>
-                        <span>{product.price * (100 - product.discount) / 100} تومان</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', fontSize: '11px', gap: '0px' }}>
+                        <span><s style={{ color: 'rgb(166, 170, 173)',fontWeight:'400',fontSize:'0.75rem' }}>{product.price}</s></span>
+                        <span style={{fontWeight:700,fontSize:'0.875rem'}}>{product.price * (100 - product.discount) / 100} <span style={{fontWeight:'300'}} >تومان</span></span>
                     </div>
                 </div>
 
@@ -59,7 +59,7 @@ const CartCard = ({ product }) => {
 
                 </div>
             </div>
-            <hr style={{ marginTop: 10 }} />
+            <hr style={{ marginTop: 10 , border:'1px solid rgba(0, 0, 0, 0.05)'}} />
         </div>
 
 

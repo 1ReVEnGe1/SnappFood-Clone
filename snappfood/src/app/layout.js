@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <body dir="rtl" className={iranSans.className} >
         <Layout>
 
-          <HeaderTop />
+          
           {children}
 
         </Layout>

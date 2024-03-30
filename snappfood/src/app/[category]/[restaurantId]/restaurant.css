@@ -14,7 +14,7 @@
 }
 
 .restaurant-content-rightbar-container {
-    width: 28%;
+    width: 25%;
     padding: 1rem;
 }
 
@@ -97,4 +97,12 @@
     flex-direction: column;
     align-items: flex-end;
     margin-top: 30px;
+}
+.restaurant-content-middle{
+    width: 50%;
+    border-radius:8px ;
+    -webkit-border-radius:8px ;
+    -moz-border-radius:8px ;
+    -ms-border-radius:8px ;
+    -o-border-radius:8px ;
 }
