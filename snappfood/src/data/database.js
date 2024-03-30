@@ -555,6 +555,11 @@ export const USER = [
 
 export const PAYMENTMETHODS = [
     {
+        method:'پرداخت با اسنپ پی',
+        name : 'مانده اعتبار ماهانه :',
+        logo: logoSnappFood,
+    },
+    {
         method:'پرداخت آنلاین',
         name : 'آسان پرداخت',
         logo: logoSnappFood,

@@ -1,18 +1,27 @@
+'use client'
+
 import Image from "next/image"
 import Link from "next/link"
 import { PAYMENTMETHODS, logoSnappFood } from "@/data/database"
 import SnappfoodSvg from "@/components/SVG/SnappfoodSvg"
 import { useCallback, useState } from "react"
-
+import { useRouter } from "next/navigation"
+//css
+import './cart.css'
 
 const cart = () => {
+    const router = useRouter()
     const paymentMethods = PAYMENTMETHODS
-    const [isChecked , setIsChecked] = useState(false)
+    const [selectedItem , setSelectedItem] = useState(null)
 
-    const handleInput = ()=> useCallback(()=> {
-        setIsChecked(prev => !prev)
+
+    const handleInput = useCallback((index)=> {
+        setSelectedItem(prev => index)
     },[])
 
+    const handleGoBack = useCallback( ()=> {
+        router.back()
+    })
 
     return (
 
@@ -24,12 +33,12 @@ const cart = () => {
                     </Link>
                 </div>
                 <div>
-                    <button>
+                    <button onClick={handleGoBack}>
                         <p>بارگشت و ویرایش سبد خرید</p>
                     </button>
                 </div>
                 <div style={{ display: 'flex', gap: '20px' }}>
-                    <div style={{ width: '70%', backgroundColor: 'lightblue' }}>
+                    <div style={{ width: '70%', backgroundColor: 'lightblue',padding:'20px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <p>آدرس</p>
                             <div style={{ display: 'flex', justifyContent: 'center' }} >
@@ -49,26 +58,17 @@ const cart = () => {
                             <p>روش پرداخت</p>
                         </div>
                         <div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <p>svg</p>
-                                <div style={{display:'flex',justifyContent:'center',gap:'15px'}}>
-                                    <Image src={logoSnappFood} width={30} height={30} alt="لوگو اسنپ پی" />
-                                    <div>
-                                        <p>پرداخت با اسنپ پی</p>
-                                        <p>مانده اعتبار ماهانه : 234475 تومان</p>
-                                    </div>
-                                </div>
-
-                                <p>SVG</p>
-                            </div>
+                            
                             {
-                                paymentMethods.map(item => (
-                                    <div>
-                                        <label style={{ display: 'flex', justifyContent: 'space-between' }} >
+                                paymentMethods.map((item,index) => (
+                                    <div style={{marginBottom:'20px'}} key={index}>
+                                        <label className={selectedItem === index ? 'active-payment' : ''} htmlFor={`item-${index}`} style={{ border:'1px solid #eee',display: 'flex', justifyContent: 'space-between' }} >
                                             <input 
                                                 type="checkbox"
-                                                checked={isChecked}
-                                                onChange={handleInput}
+                                                checked={selectedItem === index}
+                                                onChange={()=> handleInput(index)}
+                                                id={`item-${index}`}
+                                                style={{display:'none'}}
                                             />
                                             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px' }}>
                                                 <Image width={30} height={30} src={item.logo} alt={item.name} />
