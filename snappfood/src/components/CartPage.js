@@ -16,6 +16,7 @@ import Link from "next/link"
 
 const CartPage = ({ singleRes, togglePopUpDelete,routes }) => {
     const { cart } = useSelector(store => store.cart)
+    
     const totalPrice = useMemo(() => calculateShoppingCart(cart), [cart])
     const profit = useMemo(() => calculateProfit(cart), [cart])
     const tax = useMemo(() => calculateTax(totalPrice), [totalPrice])
@@ -23,7 +24,7 @@ const CartPage = ({ singleRes, togglePopUpDelete,routes }) => {
 
     const totalProducts = cart.reduce((init, current) => current.count + init, 0)
 
-
+    
     const handlePopUpDelete = useCallback(() => {
         togglePopUpDelete()
     }, [])

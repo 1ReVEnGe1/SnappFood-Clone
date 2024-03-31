@@ -8,14 +8,14 @@ import { useCallback, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
 //css
 import './cart.css'
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import LocationSvg from "@/components/SVG/LocationSvg"
-import MultiplySvg from "@/components/SVG/MultiplySvg"
 import { calculateShoppingCart } from "@/utils/calculateShoppingCart"
 import { calculateProfit } from "@/utils/calculateProfit"
 import { calculateTax } from "@/utils/calculateTax"
 import { calculateFinalPayment } from "@/utils/calculateFinalPayment"
 import { findRestaurantById } from "@/utils/findRestaurantById"
+import { addToHistory } from "@/redux/historySlice"
 
 const cart = ({ params }) => {
     const router = useRouter()
@@ -33,7 +33,11 @@ const cart = ({ params }) => {
     const profit = useMemo(() => calculateProfit(cart), [cart])
     const tax = useMemo(() => calculateTax(totalPrice), [totalPrice])
     const finalPayment = useMemo(() => calculateFinalPayment(tax, profit, totalPrice, singleRes.courierPrice), [totalPrice, profit, tax])
-    console.log(params)
+    const [user_1] = useSelector(store => store.purchaseHistory)
+    const purchaseHistory = user_1.historyCart
+    console.log(purchaseHistory)
+
+    const dispatch = useDispatch()
 
     const handleInput = useCallback((index) => {
         setSelectedItem(prev => index)
@@ -46,10 +50,17 @@ const cart = ({ params }) => {
         router.back()
     })
 
+    const handleSubmitCart = useCallback(() => {
+        dispatch(addToHistory({ userId: 1, items: cart, totalPrice, restaurantName: singleRes.title }))
+    }, [totalPrice, cart])
 
     return (
 
         <section style={{ backgroundColor: 'lightgray', width: '100%', display: 'flex', justifyContent: 'center' }}>
+
+
+
+
             <div className="cart-container" style={{ width: '83%', maxWidth: "1200px", }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Link href={'/'}>
@@ -183,14 +194,27 @@ const cart = ({ params }) => {
                             </div>
                         </div>
                         <div style={{ marginTop: 50 }}>
-                            <Link href={'/cart'} >
-                                <button style={{ cursor: 'pointer', width: '100%', height: '40px', fontSize: 17, backgroundColor: 'rgb(255, 0, 166)', border: '0.09375rem solid rgb(255, 0, 166)', borderRadius: '0.375rem', color: 'white' }}>ثبت سفارش</button>
-                            </Link>
+                            <button onClick={handleSubmitCart} style={{ cursor: 'pointer', width: '100%', height: '40px', fontSize: 17, backgroundColor: 'rgb(255, 0, 166)', border: '0.09375rem solid rgb(255, 0, 166)', borderRadius: '0.375rem', color: 'white' }}>ثبت سفارش</button>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            {/* ------------------------------------ */}
+            <div style={{backgroundColor:'lightpink'}}>
+                {
+                    purchaseHistory.map(item => (
+                        <div>
+                            <h1>{item.restaurantName}</h1>
+                            <div>
+                                {item.status}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
 
         </section>
     )
