@@ -1,17 +1,24 @@
 import { useSelector } from "react-redux"
+import MultiplySvg from "./SVG/MultiplySvg"
 
 
-const InvoiceModal = ({ purchaseId }) => {
+const InvoiceModal = ({ purchaseId , closeInvoiceModal}) => {
     const [user_1] = useSelector(store => store.purchaseHistory)
     const purchaseHistory = user_1.historyCart
 
     const Invoice = purchaseHistory.filter(facture => facture.id === purchaseId)[0]
-    console.log(Invoice)
 
 
     return (
-        <div className='invoice-overlay' style={{ width: '100%', height: '100vh', zIndex: 999, position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0.6)', top: '0', right: '0', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ padding: '1rem', width: '25rem', backgroundColor: '#fff', maxHeight: '80vh', }}>
+        <div className='invoice-overlay' style={{ width: '100%', height: '100vh', zIndex: 999, position: 'fixed', backgroundColor: 'rgba(0, 0, 0, 0.3)', top: '0', right: '0', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ padding: '1rem', width: '25rem', backgroundColor: '#fff', maxHeight: '80vh', borderRadius: '0.75rem' }}>
+                <div>
+                    <div  >
+                        <button style={{cursor:'pointer',backgroundColor:'unset',border:'none',margin:'0.5rem 0 1.5rem 0'}} onClick={closeInvoiceModal}>
+                            <MultiplySvg />
+                        </button>
+                    </div>
+                </div>
                 <div>
                     <p style={{ fontSize: '1.5rem', fontWeight: '700', lineHeight: '2rem', margin: '0.25rem 0rem' }}>فاکتور سفارش</p>
                     <p style={{ fontSize: '0.875rem', margin: '0px 0rem 1rem' }}>{Invoice.restaurantName}</p>

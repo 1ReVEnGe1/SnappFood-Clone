@@ -53,17 +53,18 @@ const historySlice = createSlice({
     ],
     reducers: {
         addToHistory:(state ,action)=> {
+            const {payload}=action;
             const index = state.findIndex( user => user.userId === action.payload.userId )
             
             state[index].historyCart.push({
                 id:Math.floor(Math.random() * 1000),
-                items: action.payload.items,
-                totalPrice:action.payload.totalPrice,
-                restaurantName:action.payload.restaurantName,
-                courierPrice : action.payload.courierPrice,
-                finalPayment: action.payload.finalPayment,
-                resLogo : action.payload.resLogo,
-                profit: action.payload.profit,
+                items: payload.items,
+                totalPrice:payload.totalPrice,
+                restaurantName:payload.restaurantName,
+                courierPrice : payload.courierPrice,
+                finalPayment: payload.finalPayment,
+                resLogo : payload.resLogo,
+                profit: payload.profit,
                 status:'pending'
             })
         }

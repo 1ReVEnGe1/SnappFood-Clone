@@ -46,7 +46,7 @@ const PurchaseHistory = () => {
         <>
             {
                 isOpenInvoice && 
-                <InvoiceModal purchaseId={purchasedItem} />
+                <InvoiceModal purchaseId={purchasedItem} closeInvoiceModal={closeInvoiceModal} />
             }
 
             {/* -------------------------- */}
