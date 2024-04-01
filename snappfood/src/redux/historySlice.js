@@ -1,3 +1,4 @@
+import { logoSnappFood } from "@/data/database";
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -23,6 +24,7 @@ const historySlice = createSlice({
                         }
                     ],
                     totalPrice: 400000,
+                    resLogo: logoSnappFood,
                     restaurantName : 'فرنام ویچ',
                     status: 'pending'
                 },
@@ -42,6 +44,7 @@ const historySlice = createSlice({
                         }
                     ],
                     totalPrice: 600000,
+                    resLogo: logoSnappFood,
                     restaurantName : 'فرنام ویچ',
                     status: 'delivered'
                 },
@@ -57,6 +60,10 @@ const historySlice = createSlice({
                 items: action.payload.items,
                 totalPrice:action.payload.totalPrice,
                 restaurantName:action.payload.restaurantName,
+                courierPrice : action.payload.courierPrice,
+                finalPayment: action.payload.finalPayment,
+                resLogo : action.payload.resLogo,
+                profit: action.payload.profit,
                 status:'pending'
             })
         }
