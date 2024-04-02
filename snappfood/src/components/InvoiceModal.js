@@ -26,7 +26,7 @@ const InvoiceModal = ({ purchaseId , closeInvoiceModal}) => {
                 <div >
                     {
                         Invoice.items.map(item => (
-                            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.06)', height: '3rem' }}>
+                            <div key={item.fullTitle} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.06)', height: '3rem' }}>
                                 <p style={{ fontSize: '0.875rem' }}>{item.fullTitle}</p>
                                 <div style={{ display: 'flex' }}>
                                     <p style={{ fontSize: '0.875rem' }}> {item.count} * </p>

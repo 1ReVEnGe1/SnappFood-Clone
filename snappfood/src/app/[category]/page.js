@@ -4,7 +4,7 @@ import RestaurantCard from "@/components/RestaurantCard"
 import Header from "@/components/Header"
 import HeaderTop from "@/components/HeaderTop"
 
-const category = ({ params }) => {
+const Category = ({ params }) => {
     const categoryTitle = params.category
     const RESTAURANTS_LIST = categoryProvider(RESTAURANTS, categoryTitle)
 
@@ -33,4 +33,4 @@ const category = ({ params }) => {
     )
 }
 
-export default category
+export default Category

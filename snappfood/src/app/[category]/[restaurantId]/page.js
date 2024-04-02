@@ -6,6 +6,7 @@ import CartPage from "@/components/CartPage"
 import Link from "next/link"
 import { findRestaurantById } from "@/utils/findRestaurantById"
 import { useCallback, useState } from "react"
+
 import { useDispatch } from "react-redux"
 import { clearCart } from "@/redux/cartSlice"
 import Image from "next/image"
@@ -23,7 +24,7 @@ import './restaurant.css'
 import StarSvg from "@/components/SVG/StarSvg"
 import HeaderTop from "@/components/HeaderTop"
 
-const restaurant = ({ params }) => {
+const Restaurant = ({ params }) => {
     const [popUpDelete, setPopUpDelete] = useState(false)
     const dispatch = useDispatch()
 
@@ -162,4 +163,4 @@ const restaurant = ({ params }) => {
     )
 }
 
-export default restaurant
+export default Restaurant

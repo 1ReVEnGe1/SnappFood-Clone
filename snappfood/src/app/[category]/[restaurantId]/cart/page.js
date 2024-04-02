@@ -6,6 +6,7 @@ import { PAYMENTMETHODS, RESTAURANTS, USER } from "@/data/database"
 import SnappfoodSvg from "@/components/SVG/SnappfoodSvg"
 import { useCallback, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
+
 //css
 import './cart.css'
 import { useDispatch, useSelector } from "react-redux"
@@ -19,7 +20,7 @@ import { addToHistory } from "@/redux/historySlice"
 import { clearCart } from "@/redux/cartSlice"
 import { Router } from "next/router"
 
-const cart = ({ params }) => {
+const Cart = ({ params }) => {
     const router = useRouter()
     const paymentMethods = PAYMENTMETHODS;
     const userDetails = USER;
@@ -159,7 +160,7 @@ const cart = ({ params }) => {
                             </div>
                             {
                                 cart.map(item => (
-                                    <div style={{ borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.06)', minHeight: '3rem' }}>
+                                    <div key={item.fullTitle} style={{ borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.06)', minHeight: '3rem' }}>
                                         <span style={{ fontSize: '0.875rem' }}>{item.fullTitle}</span>
                                         <div style={{ minWidth: '7.1875rem' }}>
                                             <span style={{ fontSize: '0.875rem', fontWeight: '700' }}>
@@ -216,4 +217,4 @@ const cart = ({ params }) => {
     )
 }
 
-export default cart
+export default Cart
