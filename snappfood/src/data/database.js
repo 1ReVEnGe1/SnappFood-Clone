@@ -545,21 +545,16 @@ export const RESTAURANTS = [
 ]
 export const USER = [
     {
+        id:'1',
         name: 'امیررضا',
         lastname: 'نوری',
         password: '123456789',
         address:'تهران، خیابان فروزش، امیربهادر، مولوی، وحدت اسلامی، رشید ثانی، تقاطع کرمانی، پلاک 33، خوابگاه ناصر الاسلامی',
         addressTitle:'خوابگاه',
         number :'09386703273',
+        email:'webdevnouri@gmail.com'
     },
-    {
-        name: 'امیررضا',
-        lastname: 'نوری',
-        password: '987654321',
-        address:'تهران، اتوبان شهید صدر شرق، خیابان قلندری جنوبی، بن بست دهم، پلاک 1',
-        addressTitle:'یارندی ایونت',
-        number :'09386703273',
-    },
+    
 ]
 
 export const PAYMENTMETHODS = [
