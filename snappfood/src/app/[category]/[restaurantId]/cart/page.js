@@ -18,14 +18,14 @@ import { calculateFinalPayment } from "@/utils/calculateFinalPayment"
 import { findRestaurantById } from "@/utils/findRestaurantById"
 import { addToHistory } from "@/redux/historySlice"
 import { clearCart } from "@/redux/cartSlice"
-import { Router } from "next/router"
+import CartAddress from "@/components/CartAddress"
 
 const Cart = ({ params }) => {
     const router = useRouter()
     const paymentMethods = PAYMENTMETHODS;
     const userDetails = USER;
     const [selectedItem, setSelectedItem] = useState(null)
-    const [selectedAddress, setSelectedAddress] = useState(null)
+    
     const { cart } = useSelector(store => store.cart)
     const productsCount = cart.reduce((init, current) => init = init + current.count, 0)
 
@@ -43,9 +43,7 @@ const Cart = ({ params }) => {
     const handleInput = useCallback((index) => {
         setSelectedItem(prev => index)
     }, [])
-    const handleUserAddress = useCallback((index) => {
-        setSelectedAddress(prev => index)
-    }, [])
+    
 
     const handleGoBack = useCallback(() => {
         router.back()
@@ -60,7 +58,9 @@ const Cart = ({ params }) => {
             courierPrice:singleRes.courierPrice,
             resLogo: singleRes.logo,
             finalPayment,
-            profit
+            profit,
+            address:userDetails.address
+            
         }));
         dispatch(clearCart());
         router.back()
@@ -84,25 +84,7 @@ const Cart = ({ params }) => {
                         <div style={{ width: '70%', backgroundColor: 'lightblue', padding: '20px' }}>
                             {
                                 userDetails.map((item, index) => (
-                                    <div style={{ marginBottom: '20px' }} key={index}>
-                                        <label className={selectedAddress === index ? 'active-payment' : ''} htmlFor={`user-${index}`} style={{ border: '1px solid #eee', display: 'flex', justifyContent: 'space-between' }} >
-                                            <input
-                                                type="checkbox"
-                                                checked={selectedAddress === index}
-                                                onChange={() => handleUserAddress(index)}
-                                                id={`user-${index}`}
-                                                style={{ display: 'none' }}
-                                            />
-                                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px' }}>
-                                                <LocationSvg />
-                                                <div>
-                                                    <p>{item.addressTitle}</p>
-                                                    <p>{item.address}</p>
-                                                </div>
-                                            </div>
-                                            <p>svg</p>
-                                        </label>
-                                    </div>
+                                    <CartAddress key={index}  item={item} />
                                 ))
                             }
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>

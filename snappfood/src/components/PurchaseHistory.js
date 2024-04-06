@@ -12,7 +12,8 @@ const PurchaseHistory = () => {
     const currentDate = moment().locale('fa').format('dddd jD MMMM HH:mm')
 
     const [user_1] = useSelector(store => store.purchaseHistory)
-    const purchaseHistory = user_1.historyCart
+    // console.log(user_1)
+    const purchaseHistory = user_1?.historyCart
 
 
     const openInvoiceModal = useCallback((id) => {

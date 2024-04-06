@@ -57,7 +57,7 @@ const historySlice = createSlice({
             const index = state.findIndex( user => user.userId === action.payload.userId )
             
             state[index].historyCart.push({
-                id:Math.floor(Math.random() * 1000),
+                userId:Math.floor(Math.random() * 1000),
                 items: payload.items,
                 totalPrice:payload.totalPrice,
                 restaurantName:payload.restaurantName,
@@ -65,6 +65,7 @@ const historySlice = createSlice({
                 finalPayment: payload.finalPayment,
                 resLogo : payload.resLogo,
                 profit: payload.profit,
+                address: payload.address,
                 status:'pending'
             })
         }
