@@ -7,9 +7,6 @@ const UserProfileOrders = () => {
     const [user1] = useSelector(store => store.purchaseHistory)
     const purchaseHistory = user1?.historyCart
     
-    console.log(purchaseHistory)
-
-console.log(purchaseHistory)
     return (
         <>
             <div style={{ padding: '1rem' }}>
@@ -17,7 +14,7 @@ console.log(purchaseHistory)
             </div>
             {
                 purchaseHistory?.map(historyItem => (
-                    <div style={{ display: 'flex' }}>
+                    <div key={historyItem.id} style={{ display: 'flex' }}>
                         <div style={{ width: '50%' }}>
                             <div style={{ display: 'flex' }}>
                                 <div> <Image src={historyItem.resLogo} alt={historyItem.restaurantName} /> </div>

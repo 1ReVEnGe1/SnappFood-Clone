@@ -17,7 +17,8 @@ const cartSlice = createSlice({
             //     count:2,
             // }
 
-        ]
+        ],
+        
     },
     reducers:{
         addToCart : (state,action)=> {
@@ -39,12 +40,20 @@ const cartSlice = createSlice({
             const index = state.cart.findIndex( item => item.id === action.payload.id )
             state.cart.splice(index , 1)
         },
-        clearCart : (state, action)=> {
+        clearCart : (state)=> {
             state.cart.length =0
+        },
+        addPaymentData : (state ,action)=> {
+            // const index = state.findIndex(item => item.paymentMethod === action.)
+            console.log(action.payload.name)
+            state.paymentName = action.payload.name
+            state.paymentMethod = action.payload.method
+            
+            
         }
     }
 })
 
 
-export const {addToCart , deleteItem, decreaseItem, clearCart} = cartSlice.actions
+export const {addToCart , deleteItem, decreaseItem, clearCart, addPaymentData} = cartSlice.actions
 export default cartSlice.reducer

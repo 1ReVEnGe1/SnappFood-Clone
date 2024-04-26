@@ -5,6 +5,7 @@ import UserNav from "@/components/UserNav"
 import { useCallback, useState } from "react"
 import UserProfile from "@/components/UserProfile"
 import UserProfileOrders from "@/components/UserProfileOrders"
+import UserTransactions from "@/components/UserTransactions"
 
 
 const Profile = () => {
@@ -19,7 +20,6 @@ const Profile = () => {
     const profileNavItems = ['سفارش های من', 'تخفیف ها', 'دعوت از دوستان', 'لیست نراکنش ها', 'خروج']
 
     const handleNavProfile = useCallback((index) => {
-        console.log(index)
         switch (index) {
             case 0:
                 setIsOpenDiscounts(prev => false)
@@ -103,7 +103,7 @@ const Profile = () => {
                             {isOpenOrders && <UserProfileOrders />}
                             {isOpenDiscounts && <h1>تخفیف ها</h1>}
                             {isOpenInvite && <h1>دعوت از دوستان</h1>}
-                            {isOpenTransaction && <h1>لیست تراکنش ها</h1>}
+                            {isOpenTransaction && <UserTransactions />}
                         </div>
 
                     </main>

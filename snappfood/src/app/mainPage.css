@@ -1,25 +1,47 @@
+.mainPageCon {
+    width: 100%;
 
-.mainCatCon{
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainCatCon {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    max-width: 85.375rem;
 }
-.mainCatCon p {
-    
+
+.mainCat{
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
+.mainCat p {
+    padding-right: 85px;
     text-align: right;
+    font-weight: bold;
 }
-.mainCon{
-    /* width: 100%; */
-    max-width: 1200px;
+
+.mainCon {
+    width: 100%;
+    /* max-width: 1200px; */
     display: flex;
     justify-content: center;
     gap: 35px;
     flex-wrap: wrap;
-
+    margin-top: 30px;
 }
-.categoryCard{
+
+.categoryCard {
     border-radius: 0.75rem;
     -webkit-border-radius: 0.75rem;
     -moz-border-radius: 0.75rem;
@@ -32,6 +54,7 @@
     box-shadow: 0 0 10px #00000046;
     overflow: hidden;
 }
+
 .categoryCard img {
     width: 100%;
     height: 100%;
@@ -42,7 +65,8 @@
     -ms-border-radius: inherit;
     -o-border-radius: inherit;
 }
-.categoryCard div{
+
+.categoryCard div {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -59,7 +83,27 @@
     -o-border-radius: 5px 0 0 0;
     padding: 10px;
 }
+
 .categoryCard div p {
     font-size: 0.8rem;
     color: black;
+}
+.latest_restaurants_title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 2rem 5.5rem;
+}
+.latest_restaurants_con{
+    width: 100%;
+    overflow-x: auto;
+    max-width: 89%;
+}
+.latest_restaurants{
+    width: 200%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    
 }

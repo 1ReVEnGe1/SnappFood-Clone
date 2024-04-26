@@ -13,8 +13,7 @@ const AddButton = ({ option }) => {
     
 
     const handleAddToCart = useCallback(() => {
-        dispatch(addToCart(option))
-        console.log(option , 'option')  
+        dispatch(addToCart(option))  
     }, [option])
 
 

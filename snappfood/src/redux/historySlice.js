@@ -8,66 +8,51 @@ const historySlice = createSlice({
         {
             userId: 1,
             historyCart: [
-                {
-                    id: 1,
-                    items: [
-                        {
-                            id: 1,
-                            title: 'ساده',
-                            image: '',
-                            category: 'برگر',
-                            seller: 'فرنام ویچ',
-                            price: 200000,
-                            fullTitle: 'دوبل برگر ساده',
-                            discount: '',
-                            count: 2,
-                        }
-                    ],
-                    totalPrice: 400000,
-                    resLogo: logoSnappFood,
-                    restaurantName : 'فرنام ویچ',
-                    status: 'pending'
-                },
-                {
-                    id: 2,
-                    items: [
-                        {
-                            id: 1,
-                            title: 'پیتزا پپرونی ایتالیایی 24 سانتی',
-                            image: '',
-                            category: 'پیتزا',
-                            seller: 'فرنام ویچ',
-                            price: 200000,
-                            fullTitle: 'پیتزا پپرونی ایتالیایی 24 سانتی',
-                            discount: 5,
-                            count: 4,
-                        }
-                    ],
-                    totalPrice: 600000,
-                    resLogo: logoSnappFood,
-                    restaurantName : 'فرنام ویچ',
-                    status: 'delivered'
-                },
+                // {
+                //     id: 1,
+                //     items: [
+                //         // {
+                //         //     id: 1,
+                //         //     title: 'ساده',
+                //         //     image: '',
+                //         //     category: 'برگر',
+                //         //     seller: 'فرنام ویچ',
+                //         //     price: 200000,
+                //         //     fullTitle: 'دوبل برگر ساده',
+                //         //     discount: '',
+                //         //     count: 2,
+                //         // }
+                //     ],
+                //     totalPrice: 400000,
+                //     resLogo: logoSnappFood,
+                //     restaurantName : 'فرنام ویچ',
+                //     status: 'pending'
+                // },
+                
             ]
         },
     ],
     reducers: {
         addToHistory:(state ,action)=> {
             const {payload}=action;
-            const index = state.findIndex( user => user.userId === action.payload.userId )
+            // const index = state.findIndex( user => user.userId === action.payload.userId )
             
-            state[index].historyCart.push({
-                userId:Math.floor(Math.random() * 1000),
-                items: payload.items,
-                totalPrice:payload.totalPrice,
+            state[0].historyCart.push({
+                id:Math.floor(Math.random()*1000),
+                items : payload.items,
+                totalPrice : payload.totalPrice,
                 restaurantName:payload.restaurantName,
-                courierPrice : payload.courierPrice,
                 finalPayment: payload.finalPayment,
                 resLogo : payload.resLogo,
                 profit: payload.profit,
                 address: payload.address,
+                orderTime : payload.orderTime,
+                paymentMethod : payload.paymentMethod,
+                paymentName : payload.paymentName,
                 status:'pending'
             })
+            
+            
         }
     }
 })

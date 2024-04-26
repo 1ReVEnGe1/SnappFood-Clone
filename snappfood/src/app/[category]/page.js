@@ -24,7 +24,8 @@ const Category = ({ params }) => {
                         {
                             RESTAURANTS_LIST.map(restaurant => (
                                 <RestaurantCard key={restaurant.id} restaurant={restaurant} />
-                            ))}
+                            ))
+                        }
                     </div>
                 </div>
 

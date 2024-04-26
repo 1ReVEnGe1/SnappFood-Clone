@@ -1,5 +1,5 @@
 'use client'
-import moment from "jalali-moment"
+// import moment from "jalali-moment"
 import Image from "next/image"
 import { useCallback, useEffect, useState } from "react"
 import { useSelector } from "react-redux"
@@ -9,10 +9,9 @@ import InvoiceModal from "./InvoiceModal"
 const PurchaseHistory = () => {
     const [isOpenInvoice, setIsOpenInvoice] = useState(false)
     const [purchasedItem , setPurchasedItem ] = useState(null)
-    const currentDate = moment().locale('fa').format('dddd jD MMMM HH:mm')
+    // const currentDate = moment().locale('fa').format('dddd jD MMMM HH:mm')
 
     const [user_1] = useSelector(store => store.purchaseHistory)
-    // console.log(user_1)
     const purchaseHistory = user_1?.historyCart
 
 
@@ -58,16 +57,16 @@ const PurchaseHistory = () => {
                     </div>
                     <div style={{ border: '0.0625rem solid rgba(58, 61, 66, 0.12)', borderRadius: '0.75rem 0.75rem 0px 0px' }}>
                         {
-                            purchaseHistory.map(item => (
+                            purchaseHistory?.map(item => (
                                 <>
-                                    <div style={{ borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.12)', }}>
+                                    <div key={item.id} style={{ borderBottom: '0.0625rem solid rgba(58, 61, 66, 0.12)', }}>
                                         <div style={{ display: 'flex', padding: '0.75rem 0px 0.5rem' }}>
                                             <div style={{ width: '3rem', height: '3rem', marginRight: '0.75rem' }}>
                                                 <Image src={item.resLogo} style={{ width: '100%', height: '100%' }} alt={item.restaurantName} />
                                             </div>
                                             <div style={{ marginRight: '1rem' }}>
                                                 <p>{item.restaurantName}</p>
-                                                <p>{currentDate}</p>
+                                                <p>{item.currentDate}</p>
                                             </div>
                                         </div>
                                         <div style={{ margin: '1rem', display: 'flex', justifyContent: 'space-between', backgroundColor: 'rgba(0, 133, 66, 0.06)' }}>

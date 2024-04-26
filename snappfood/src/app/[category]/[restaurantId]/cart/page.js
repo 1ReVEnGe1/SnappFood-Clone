@@ -6,27 +6,32 @@ import { PAYMENTMETHODS, RESTAURANTS, USER } from "@/data/database"
 import SnappfoodSvg from "@/components/SVG/SnappfoodSvg"
 import { useCallback, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
-
+import moment from "jalali-moment"
 //css
 import './cart.css'
 import { useDispatch, useSelector } from "react-redux"
-import LocationSvg from "@/components/SVG/LocationSvg"
 import { calculateShoppingCart } from "@/utils/calculateShoppingCart"
 import { calculateProfit } from "@/utils/calculateProfit"
 import { calculateTax } from "@/utils/calculateTax"
 import { calculateFinalPayment } from "@/utils/calculateFinalPayment"
 import { findRestaurantById } from "@/utils/findRestaurantById"
 import { addToHistory } from "@/redux/historySlice"
-import { clearCart } from "@/redux/cartSlice"
+import { addPaymentData, clearCart } from "@/redux/cartSlice"
 import CartAddress from "@/components/CartAddress"
 
 const Cart = ({ params }) => {
-    const router = useRouter()
-    const paymentMethods = PAYMENTMETHODS;
-    const userDetails = USER;
     const [selectedItem, setSelectedItem] = useState(null)
     
+    const paymentMethods = PAYMENTMETHODS;
+    const userDetails = USER;
+
+    const router = useRouter()
+    const dispatch = useDispatch()
+    
     const { cart } = useSelector(store => store.cart)
+    const { paymentMethod } = useSelector(store => store.cart)
+    const { paymentName } = useSelector(store => store.cart)
+
     const productsCount = cart.reduce((init, current) => init = init + current.count, 0)
 
     const restaurantId = Number(params.restaurantId)
@@ -37,12 +42,14 @@ const Cart = ({ params }) => {
     const tax = useMemo(() => calculateTax(totalPrice), [totalPrice])
     const finalPayment = useMemo(() => calculateFinalPayment(tax, profit, totalPrice, singleRes.courierPrice), [totalPrice, profit, tax])
 
+    const currentDate = moment().locale('fa').format('dddd jD MMMM HH:mm')
 
-    const dispatch = useDispatch()
-
-    const handleInput = useCallback((index) => {
+    const handleInput = useCallback((index, name, method) => {
         setSelectedItem(prev => index)
-    }, [])
+        
+        dispatch(addPaymentData({name, method}))
+        
+    }, [ selectedItem])
     
 
     const handleGoBack = useCallback(() => {
@@ -59,8 +66,10 @@ const Cart = ({ params }) => {
             resLogo: singleRes.logo,
             finalPayment,
             profit,
-            address:userDetails.address
-            
+            address:userDetails.address,
+            orderTime:currentDate,
+            paymentMethod:paymentMethod,
+            paymentName:paymentName
         }));
         dispatch(clearCart());
         router.back()
@@ -109,14 +118,14 @@ const Cart = ({ params }) => {
 
                                 {
                                     paymentMethods.map((item, index) => (
-                                        <div style={{ marginBottom: '20px' }} key={index}>
+                                        <div style={{ marginBottom: '20px' }} key={item.name}>
                                             <label className={selectedItem === index ? 'active-payment' : ''} htmlFor={`item-${index}`} style={{ border: '1px solid #eee', display: 'flex', justifyContent: 'space-between' }} >
                                                 <input
                                                     type="checkbox"
                                                     checked={selectedItem === index}
-                                                    onChange={() => handleInput(index)}
+                                                    onChange={() => handleInput(index, item.name, item.method)}
                                                     id={`item-${index}`}
-                                                    style={{ display: 'none' }}
+                                                    // style={{ display: 'none' }}
                                                 />
                                                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '15px' }}>
                                                     <Image width={30} height={30} src={item.logo} alt={item.name} />
