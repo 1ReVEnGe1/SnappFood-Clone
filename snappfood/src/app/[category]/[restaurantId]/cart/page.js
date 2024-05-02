@@ -56,7 +56,7 @@ const Cart = ({ params }) => {
         router.back()
     })
 
-    const handleSubmitCart = useCallback(() => {
+    const handleSubmitCart = () => {
         dispatch(addToHistory({
             userId: 1,
             items: cart,
@@ -73,7 +73,7 @@ const Cart = ({ params }) => {
         }));
         dispatch(clearCart());
         router.back()
-    }, [totalPrice, cart])
+    }
 
     return (
         <>

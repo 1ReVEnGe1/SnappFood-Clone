@@ -17,7 +17,7 @@
     max-width: 85.375rem;
 }
 
-.mainCat{
+.mainCat {
     margin-top: 80px;
     display: flex;
     justify-content: flex-start;
@@ -88,22 +88,42 @@
     font-size: 0.8rem;
     color: black;
 }
-.latest_restaurants_title{
+
+.latest_restaurants_title {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
     padding: 2rem 5.5rem;
 }
-.latest_restaurants_con{
+
+.latest_restaurants_con {
     width: 100%;
     overflow-x: auto;
     max-width: 89%;
 }
-.latest_restaurants{
+
+.latest_restaurants {
     width: 200%;
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
