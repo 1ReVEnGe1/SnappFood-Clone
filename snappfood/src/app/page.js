@@ -1,5 +1,5 @@
 import HeaderTop from "@/components/HeaderTop";
-import { CATEGORIES } from "@/data/database";
+import { CATEGORIES, logoSnappFood } from "@/data/database";
 import MainCategoryItems from "@/components/MainCategoryItems";
 import Header from "@/components/Header";
 import RestaurantCard from "@/components/RestaurantCard";
@@ -13,6 +13,7 @@ import iapps from '../assets/mainPagePics/iapps.svg'
 import mobilePic from '../assets/mainPagePics/img_app_mockup@2x.png'
 import business from '../assets/mainPagePics/vendor_pic.png'
 
+
 //css files
 import './mainPage.css'
 
@@ -21,6 +22,8 @@ import SibappSvg from "@/components/SVG/SibappSvg";
 import StoreSvg from "@/components/SVG/StoreSvg";
 import Link from "next/link";
 import FooterCities from "@/components/FooterCities";
+import Footer from "@/components/Footer";
+import ConsultFixed from "@/components/ConsultFixed";
 
 
 
@@ -256,14 +259,17 @@ export default function Home() {
         </main>
 
         {/* -------------------------- */}
-        <div style={{ marginTop: '50px',padding:'0 2rem', width: '100%', borderTop: '0.0625rem solid rgb(235, 237, 240)'}}>
+        <div style={{ marginTop: '50px', padding: '0 2rem', width: '100%', borderTop: '0.0625rem solid rgb(235, 237, 240)' }}>
           <h3 style={{ marginTop: '20px', fontSize: '14px' }}>اسنپ فود  در شهر های ایران</h3>
           <div style={{ marginTop: '25px' }}>
             <FooterCities />
           </div>
         </div>
+        {/* -------------------------- */}
+        <Footer />
+        
       </div>
-
+      <ConsultFixed />
 
     </>
 
