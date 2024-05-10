@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 import PurchaseHistory from "./PurchaseHistory"
 import { useCallback, useEffect, useState } from "react"
 
-const HeaderTop = () => {
+const HeaderTop = ({isMainPage}) => {
     const { cart } = useSelector(store => store.cart)
     const productsCount = cart.reduce((init, current) => init = init + current.count, 0)
     const [isOpenOrdersHistory, setIsOpenOrdersHistory] = useState(false)
@@ -38,7 +38,7 @@ const HeaderTop = () => {
 
     return (
         <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 15px 7px 15px', backgroundColor: '#fff', boxShadow: 'rgba(58, 61, 66, 0.06) 0px 1px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px' }}>
+            <div className={`${isMainPage ? '' : 'otherPage_header_styles'}`} style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 15px 7px 15px', backgroundColor: '#fff', boxShadow: 'rgba(58, 61, 66, 0.06) 0px 1px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px' }}>
                 <div style={{ display: 'flex', gap: '40px', backgroundColor: '#fff' }}>
                     <Link href={'/'} style={{ width: '60px', height: '60px' }}>
                         <Image style={{ width: '100%', height: '100%' }} src={logoSnappFood} alt={'لوگو اسنپ فود'} />

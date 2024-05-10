@@ -12,7 +12,7 @@ const Category = ({ params }) => {
 
     return (
         <>
-            <HeaderTop />
+            
             <Header />
             <main style={{ width: '100%' }}>
                 <div style={{ width: '100%' }}>

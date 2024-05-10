@@ -1,4 +1,4 @@
-import HeaderTop from "@/components/HeaderTop";
+
 import { CATEGORIES, logoSnappFood } from "@/data/database";
 import MainCategoryItems from "@/components/MainCategoryItems";
 import Header from "@/components/Header";
@@ -12,6 +12,7 @@ import iapps from '../assets/mainPagePics/iapps.svg'
 //Images
 import mobilePic from '../assets/mainPagePics/img_app_mockup@2x.png'
 import business from '../assets/mainPagePics/vendor_pic.png'
+
 
 
 //css files
@@ -29,9 +30,11 @@ import ConsultFixed from "@/components/ConsultFixed";
 
 export default function Home() {
 
+
+
   return (
     <>
-      <HeaderTop />
+
       <Header />
       <div className="mainPageCon">
         <main className={'mainCatCon'} >
@@ -267,7 +270,7 @@ export default function Home() {
         </div>
         {/* -------------------------- */}
         <Footer />
-        
+
       </div>
       <ConsultFixed />
 

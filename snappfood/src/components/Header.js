@@ -1,23 +1,45 @@
-
+'use client'
 
 import { HEADERCATEGORY } from "@/data/database"
-import Image from "next/image"
-import Link from "next/link"
 import HeaderItems from "./HeaderItems"
+import { usePathname } from "next/navigation";
 
-const Header = ()=> {
-    return(
-        <div>
-            <div></div>
-            <div style={{display:"flex",justifyContent:'center',alignItems:'center'}}>
-                {
-                    HEADERCATEGORY.map(item => (
-                        <HeaderItems key={item.id} item={item} />
-                    ))
-                }
-                
+//css files
+import './Header.css'
+import { useEffect, useState } from "react";
+import HeaderTop from "./HeaderTop";
+
+const Header = () => {
+    const [isMainPage, setIsMainPage] = useState(true)
+    console.log('----------------------')
+    const router = usePathname()
+    console.log(router)
+    useEffect(() => {
+        if (router == '/') {
+            setIsMainPage(prev => true)
+        } else {
+            setIsMainPage(prev => false)
+        }
+
+    }, [router])
+
+    return (
+        <>
+            <div className={`${isMainPage ? 'mainPage_header_styles' : 'mainPage_header_styles2'}`} style={{width:'100%'}}>
+                <HeaderTop isMainPage={isMainPage} />
+
+                <div>
+                    <div className={`bg_white ${isMainPage ? 'box_shadow' : ''} `} style={{ paddingBottom: '10px',paddingTop:'10px', display: "flex", justifyContent: 'center', alignItems: 'center' }}>
+                        {
+                            HEADERCATEGORY.map(item => (
+                                <HeaderItems key={item.id} item={item} />
+                            ))
+                        }
+
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

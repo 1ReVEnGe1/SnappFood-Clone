@@ -2,7 +2,6 @@ import { getIranCities } from "../../requests/getIranCities"
 
 const FooterCities = async () => {
     const cities = await getIranCities();
-    console.log(cities)
     return (
         <>
             <div style={{display:'flex', flexWrap:'wrap',width:'100%' , columnGap:'40px',rowGap:'20px' , flexDirection:'column' , height:'300px'}}>
