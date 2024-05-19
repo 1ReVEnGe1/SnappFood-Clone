@@ -11,9 +11,8 @@ import HeaderTop from "./HeaderTop";
 
 const Header = () => {
     const [isMainPage, setIsMainPage] = useState(true)
-    console.log('----------------------')
     const router = usePathname()
-    console.log(router)
+
     useEffect(() => {
         if (router == '/') {
             setIsMainPage(prev => true)

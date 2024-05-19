@@ -17,8 +17,6 @@ const Profile = () => {
     const [isOpenTransaction, setIsOpenTransaction] = useState(false)
 
 
-    const profileNavItems = ['سفارش های من', 'تخفیف ها', 'دعوت از دوستان', 'لیست نراکنش ها', 'خروج']
-
     const handleNavProfile = useCallback((index) => {
         switch (index) {
             case 0:

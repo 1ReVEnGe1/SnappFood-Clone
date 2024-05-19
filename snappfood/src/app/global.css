@@ -5,7 +5,8 @@
     scroll-behavior: smooth;   
 }
 body{
-    background-color: #F9FAFB;
+    /* background-color: #F9FAFB; */
+    background-color: #fff;
 }
 button {
     font-family: '__iranSans_4b0b1a', '__iranSans_Fallback_4b0b1a';

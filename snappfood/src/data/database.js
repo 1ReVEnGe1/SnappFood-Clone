@@ -43,14 +43,16 @@ import royalburger from '../assets/restaurants/farnamwich/royal burger zoghali.j
 import doubleburgur from '../assets/restaurants/farnamwich/double burger.jpg'
 import burgurHotdogSand from '../assets/restaurants/farnamwich/sandwich burgur va hotdog royal.jpg'
 import zapataSand from '../assets/restaurants/farnamwich/sandwich zapata.jpg'
-
+//------------raftari--------------------
+import kebabNeginDarRaftari from '../assets/restaurants/raftari/kebab kubide negin dar.jpeg'
+import kebabMakhsusRaftari from '../assets/restaurants/raftari/kebab kubide makhsus.jpeg'
 
 export const logoSnappFood = logo
 export const IRANIP = 'ایرانی'
 export const IRANI = 'irani'
 export const FASTFOODP = 'فست فود'
 export const FASTFOOD = 'fastfood'
-export const KEBABP = 'کباب'
+export const KEBABP = 'چلو‌ کباب'
 export const KEBAB = 'kebab'
 export const PIZZAP = 'پیتزا'
 export const PIZZA = 'pizza'
@@ -77,7 +79,8 @@ export const CATEGORIES = [
         id: 1,
         titleP: IRANIP,
         title: IRANI,
-        image: iraniFoods
+        image: iraniFoods,
+        
     },
     {
         id: 2,
@@ -147,6 +150,21 @@ export const CATEGORIES = [
     },
 ]
 
+export const FASTFOODTYPES = ['پیتزا' , 'ساندویچ' , 'برگر' , 'سوخاری' , 'پاستا' , 'استیک']
+
+export const FOODKINDS = [
+    {
+        id:1,
+        category:FASTFOOD,
+        types:['همه','پیتزا' , 'ساندویچ' , 'برگر' , 'سوخاری' , 'پاستا' , 'استیک']
+    },
+    {
+        id:2,
+        category:IRANI,
+        types:['همه','کباب' , 'سنتی' , 'پلوی ایرانی' , 'خورشت' , 'مرغ' , 'گیلانی']
+    },
+]
+
 export const HEADERCATEGORY = [
     {
         id: 1,
@@ -212,7 +230,153 @@ export const RESTAURANTS = [
         orders: 'ایرانی، چلوکباب، کباب',
         discount: '15%',
         image: shayestehRes,
-        logo: defaultLogo
+        logo: defaultLogo,
+        products: [
+            {
+                id: 1,
+                category: KEBABP,
+                model: 'چلوکباب کوبیده نگین دار',
+                recipe: 'یک سیخ کباب کوبیده نگین دار مخلوط گوشت گوسفندی و گوساله ۱۲۰ گرمی با تکه های جوجه کباب، ۳۲۰ گرم برنج ایرانی، دورچین: گوجه کبابی، فلفل کبابی، لیمو ترش، کره حیوانی',
+                image: kebabNeginDarRaftari,
+                score: 4.2,
+                options: [
+                    {
+                        id: 1,
+                        title: 'یک سیخ',
+                        price: 140000,
+                        category: KEBABP,
+                        seller: 'رستوران شایسته',
+                        image: shayestehRes,
+                        fullTitle: 'چلوکباب کوبیده نگین دار',
+                        discount: ''
+                    },
+                    
+                ]
+            },
+            {
+                id: 2,
+                category: KEBABP,
+                model: 'چلوکباب کوبیده مخصوص',
+                recipe: 'کباب کوبیده مخلوط گوشت گوسفندی و گوساله ۱۲۰ گرمی، ۴۰۰ گرم برنج کته ایرانی، دورچین: ۲ تکه گوجه کبابی، فلفل کبابی، لیمو ترش، یک بسته سبزی، کره',
+                image: kebabMakhsusRaftari,
+                score: 3.8,
+                options: [
+                    {
+                        id: 2,
+                        title: 'دو سیخ',
+                        price: 200000,
+                        category: KEBABP,
+                        seller: 'رستوران شایسته',
+                        image: shayestehRes,
+                        fullTitle: 'چلوکباب کوبیده مخصوص',
+                        discount: ''
+                    },
+                    
+                ]
+            },
+            
+            {
+                id: 3,
+                category: BURGURP,
+                model: 'رویال برگر ذغالی',
+                recipe: 'یک عدد برگر شرکتی گوشت ۶۰%، خیارشور، گوجه، یک ورق ژامبون گوشت و مرغ ۸۰%، قارچ و پنیر پیتزا، نان گرد',
+                image: royalburger,
+                score: 4.2,
+                options: [
+                    {
+                        id: 7,
+                        title: 'ساده',
+                        price: 100000,
+                        category: BURGURP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: royalburger,
+                        fullTitle: 'رویال برگر ذغالی دونفره ساده',
+                        discount: '2'
+                    },
+                    {
+                        id: 8,
+                        title: 'با قارچ و پنیر',
+                        price: 120000,
+                        category: BURGURP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: royalburger,
+                        fullTitle: 'رویال برگر ذغالی با قارچ و پنیر',
+                        discount: '9'
+                    }
+                ]
+            },
+            {
+                id: 4,
+                category: BURGURP,
+                model: 'دبل برگر',
+                recipe: '۲ عدد برگر شرکتی گوشت ۶۰%، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان گرد',
+                image: doubleburgur,
+                score: 4.2,
+                options: [
+                    {
+                        id: 9,
+                        title: 'ساده',
+                        price: 100000,
+                        category: BURGURP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: doubleburgur,
+                        fullTitle: 'دبل برگر ساده',
+                        discount: '32'
+                    },
+                    {
+                        id: 10,
+                        title: 'با قارچ و پنیر',
+                        price: 125000,
+                        category: BURGURP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: doubleburgur,
+                        fullTitle: 'دبل برگر با قارچ و پنیر',
+                        discount: '12'
+                    },
+                ]
+            },
+            {
+                id: 5,
+                category: SANDWICHP,
+                model: 'ساندویچ برگر و هات داگ رویال',
+                recipe: 'یک عدد برگر شرکتی گوشت ۹۰%، ۱۵۰ گرم ژامبون گوشت ۹۰%، یک عدد هات داگ گوشت ۸۰%، قارچ، پنیر پیتزا، سس مخصوص، نان باگت',
+                image: burgurHotdogSand,
+                score: 4.2,
+                options: [
+                    {
+                        id: 11,
+                        title: '',
+                        price: 125000,
+                        category: SANDWICHP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: burgurHotdogSand,
+                        fullTitle: 'ساندویچ برگر و هات داگ رویال',
+                        discount: ''
+                    },
+
+                ]
+            },
+            {
+                id: 6,
+                category: SANDWICHP,
+                model: 'ساندویچ زاپاتا',
+                recipe: '۱۵۰ گرم ژامبون گوشت ۹۰%، ، یک عدد برگر شرکتی ۹۰% گوشت، ۱۰۰ گرم فیله مرغ گریل شده، قارچ، پنیر پیتزا، سس مخصوص، کاهو، گوجه فرنگی، خیارشور، نان باگت',
+                image: zapataSand,
+                score: 4.2,
+                options: [
+                    {
+                        id: 12,
+                        title: '',
+                        price: 115000,
+                        category: SANDWICHP,
+                        seller: 'فست فود فرنام ویچ',
+                        image: doubleburgur,
+                        fullTitle: 'ساندویچ زاپاتا',
+                        discount: ''
+                    },
+                ]
+            },
+        ]
     },
     {
         id: 2,
