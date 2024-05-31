@@ -1,15 +1,15 @@
 'use client'
-import { logoSnappFood } from "@/data/database"
+import { RESTAURANTS, logoSnappFood } from "@/data/database"
 import Image from "next/image"
 import Link from "next/link"
-import { useSelector } from "react-redux"
 import PurchaseHistory from "./PurchaseHistory"
 import { useCallback, useEffect, useState } from "react"
 
-const HeaderTop = ({isMainPage}) => {
-    const { cart } = useSelector(store => store.cart)
-    const productsCount = cart.reduce((init, current) => init = init + current.count, 0)
-    const [isOpenOrdersHistory, setIsOpenOrdersHistory] = useState(false)
+
+const HeaderTop = ({ isMainPage }) => {
+    const [searchedArray, setSearchedArray] = useState([]);
+    const [isShowInput, setIsShowInput] = useState(false);
+    const [isOpenOrdersHistory, setIsOpenOrdersHistory] = useState(false);
 
     const openOrdersSection = useCallback(() => {
         setIsOpenOrdersHistory(true)
@@ -36,8 +36,60 @@ const HeaderTop = ({isMainPage}) => {
         }
     }, [isOpenOrdersHistory])
 
+    const openInputModal = useCallback(() => {
+        setIsShowInput(true)
+    }, [])
+    const closeInputModal = useCallback(() => {
+        setIsShowInput(false)
+    }, [])
+
+    useEffect(() => {
+        const handleOutClick = (e) => {
+            if (e.target.classList.contains('search-input-overlay')) {
+                closeInputModal()
+            }
+        }
+        if (isShowInput) {
+            document.addEventListener('mousedown', handleOutClick)
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleOutClick)
+        }
+
+    }, [isShowInput])
+
+    const handleSearch = (e) => {
+
+        const searchedItems = RESTAURANTS.filter(RES => (
+            RES.title.includes(e)
+        ))
+        setSearchedArray(prev => searchedItems);
+        if (e.length === 0) {
+            setSearchedArray(searchedArray.length = 0)
+        }
+
+    }
+
+
+
     return (
         <>
+            {
+                isShowInput &&
+                <div className={`search-input-overlay`} style={{ backgroundColor: 'rgb(0,0,0,0.5)', width: '100%', height: '100vh', zIndex: 99999 }}>
+                    <div>
+                        <div>
+                            <div>
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="#3A3D42"><path d="M7.75008 0.666016C11.6621 0.666016 14.8334 3.83733 14.8334 7.74935C14.8334 9.40479 14.2655 10.9276 13.3139 12.1336L16.5477 15.3684C16.8731 15.6939 16.8731 16.2215 16.5477 16.5469C16.2222 16.8724 15.6946 16.8724 15.3692 16.5469L12.1343 13.3132C10.9283 14.2648 9.40552 14.8327 7.75008 14.8327C3.83806 14.8327 0.666748 11.6614 0.666748 7.74935C0.666748 3.83733 3.83806 0.666016 7.75008 0.666016ZM7.75008 2.33268C4.75854 2.33268 2.33341 4.75781 2.33341 7.74935C2.33341 10.7409 4.75854 13.166 7.75008 13.166C10.7416 13.166 13.1667 10.7409 13.1667 7.74935C13.1667 4.75781 10.7416 2.33268 7.75008 2.33268Z"></path></svg>
+                                <input type="text" placeholder="جست‌و‌جو در رستوران" onChange={(e) => handleSearch(e.target.value)} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
             <div className={`${isMainPage ? '' : 'otherPage_header_styles'}`} style={{ display: 'flex', justifyContent: 'space-between', padding: '7px 15px 7px 15px', backgroundColor: '#fff', boxShadow: 'rgba(58, 61, 66, 0.06) 0px 1px 0px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px' }}>
                 <div style={{ display: 'flex', gap: '40px', backgroundColor: '#fff' }}>
                     <Link href={'/'} style={{ width: '60px', height: '60px' }}>
@@ -46,9 +98,28 @@ const HeaderTop = ({isMainPage}) => {
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
                         آدرس - فروزش ، خیابان حامام
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
-                        <input type="text" placeholder="جست‌و‌جو در رستوران" />
+
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
+
+                        <button onClick={openInputModal}>open</button>
+                        <div style={{ width: '100%', height: '50px', backgroundColor: 'pink' }}>
+                            {
+                                searchedArray.length > 0 &&
+                                searchedArray.slice(0, 3).map(item => (
+                                    <div key={item.id}>
+                                        <Link href={`/${item.category}/${item.id}`} style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+                                            <Image src={item.logo} alt={'slm'} width={50} />
+                                            <h3>{item.title}</h3>
+                                        </Link>
+
+                                    </div>
+                                ))
+                            }
+
+
+                        </div>
                     </div>
+
                 </div>
                 <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center', backgroundColor: '#fff' }}>
                     <Link href={'/profile'} style={{ backgroundColor: '#fff' }} >
@@ -66,6 +137,10 @@ const HeaderTop = ({isMainPage}) => {
                 <PurchaseHistory />
 
             }
+
+
+
+
 
         </>
 
